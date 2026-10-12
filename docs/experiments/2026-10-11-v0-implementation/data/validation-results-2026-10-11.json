@@ -1,0 +1,960 @@
+{
+  "date": "2026-10-11",
+  "tests_passed": 22,
+  "pilots": {
+    "pilot-L0": {
+      "python": "3.12.3",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "device": "cpu",
+      "device_name": "x86_64",
+      "rocr_visible_devices": "2",
+      "parameters_per_agent": 65497,
+      "population_slots": 384,
+      "update_targets": {
+        "prediction": [],
+        "local": [],
+        "rl": []
+      },
+      "pretraining": false,
+      "external_task_rewards": false,
+      "tick": 9000,
+      "alive": [
+        22,
+        14,
+        15
+      ],
+      "food": [
+        32,
+        29,
+        38
+      ],
+      "energy": [
+        407.6404113769531,
+        351.62554931640625,
+        260.883056640625
+      ],
+      "births_clone_sexual": [
+        [
+          125,
+          37
+        ],
+        [
+          131,
+          24
+        ],
+        [
+          124,
+          31
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          161,
+          11
+        ],
+        [
+          165,
+          8
+        ],
+        [
+          163,
+          9
+        ]
+      ],
+      "eaten": [
+        590,
+        566,
+        546
+      ],
+      "max_generation": [
+        14,
+        19,
+        16
+      ],
+      "capacity_rejected": [
+        0,
+        0,
+        0
+      ],
+      "capacity_ticks": [
+        0,
+        0,
+        0
+      ],
+      "extinction_tick": [
+        -1,
+        -1,
+        -1
+      ],
+      "status": "complete",
+      "config_hash": "4c7e2397512e",
+      "elapsed_seconds": 176.50671501702163,
+      "measured_ticks": 9000,
+      "world_ticks_per_second": 152.96868449110406,
+      "agent_decisions_per_second": 3956.206424966092,
+      "snapshot_drops": 0,
+      "observer_write_seconds": 2.0158863556571305,
+      "peak_allocated_bytes": null
+    },
+    "pilot-L1": {
+      "python": "3.12.3",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "device": "cpu",
+      "device_name": "x86_64",
+      "rocr_visible_devices": "0",
+      "parameters_per_agent": 65497,
+      "population_slots": 384,
+      "update_targets": {
+        "prediction": [],
+        "local": [
+          "feat_w"
+        ],
+        "rl": []
+      },
+      "pretraining": false,
+      "external_task_rewards": false,
+      "tick": 9000,
+      "alive": [
+        23,
+        17,
+        21
+      ],
+      "food": [
+        26,
+        46,
+        19
+      ],
+      "energy": [
+        407.2980651855469,
+        295.92572021484375,
+        386.6204528808594
+      ],
+      "births_clone_sexual": [
+        [
+          122,
+          30
+        ],
+        [
+          129,
+          26
+        ],
+        [
+          122,
+          37
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          149,
+          12
+        ],
+        [
+          163,
+          7
+        ],
+        [
+          164,
+          6
+        ]
+      ],
+      "eaten": [
+        593,
+        548,
+        562
+      ],
+      "max_generation": [
+        14,
+        18,
+        15
+      ],
+      "capacity_rejected": [
+        0,
+        0,
+        0
+      ],
+      "capacity_ticks": [
+        0,
+        0,
+        0
+      ],
+      "extinction_tick": [
+        -1,
+        -1,
+        -1
+      ],
+      "status": "complete",
+      "config_hash": "1b2d4dae023f",
+      "elapsed_seconds": 205.3434123599436,
+      "measured_ticks": 9000,
+      "world_ticks_per_second": 131.4870522978944,
+      "agent_decisions_per_second": 3412.517557523034,
+      "snapshot_drops": 0,
+      "observer_write_seconds": 2.4482139501487836,
+      "peak_allocated_bytes": null
+    },
+    "pilot-L2-gpu": {
+      "python": "3.12.3",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "device": "cuda:0",
+      "device_name": "AMD Radeon AI PRO R9700",
+      "rocr_visible_devices": "2",
+      "parameters_per_agent": 65497,
+      "population_slots": 384,
+      "update_targets": {
+        "prediction": [
+          "enc_w",
+          "enc_b",
+          "enc_g",
+          "enc_n",
+          "gru_iw",
+          "gru_hw",
+          "gru_ib",
+          "gru_hb",
+          "core_g",
+          "core_n",
+          "pred_w",
+          "pred_b"
+        ],
+        "local": [],
+        "rl": []
+      },
+      "pretraining": false,
+      "external_task_rewards": false,
+      "source_hash": "7e6a7a3f4a758162f839bc9b22ae49ba6a47ba661a65ac146ee95e9013be4e05",
+      "rng": "counter_hash32_by_world_seed_individual_id_tick_stream; observer_numpy_generator_separate",
+      "evaluation_features": [
+        "own_energy_delta_or_zero",
+        "mean_rgb_delta_R",
+        "mean_rgb_delta_G",
+        "mean_rgb_delta_B",
+        "received_symbol_1",
+        "received_symbol_2",
+        "received_symbol_3",
+        "received_symbol_4",
+        "action_0_choice_0",
+        "action_0_choice_1",
+        "action_0_choice_2",
+        "action_0_choice_3",
+        "action_1_choice_0",
+        "action_1_choice_1",
+        "action_2_choice_0",
+        "action_2_choice_1",
+        "action_2_choice_2",
+        "action_2_choice_3",
+        "action_2_choice_4",
+        "action_3_choice_0",
+        "action_3_choice_1",
+        "action_3_choice_2"
+      ],
+      "tick": 9000,
+      "alive": [
+        14,
+        23,
+        15
+      ],
+      "food": [
+        61,
+        30,
+        24
+      ],
+      "energy": [
+        340.2640380859375,
+        351.16094970703125,
+        276.3048400878906
+      ],
+      "births_clone_sexual": [
+        [
+          119,
+          25
+        ],
+        [
+          123,
+          32
+        ],
+        [
+          122,
+          33
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          147,
+          15
+        ],
+        [
+          154,
+          10
+        ],
+        [
+          163,
+          9
+        ]
+      ],
+      "eaten": [
+        559,
+        558,
+        564
+      ],
+      "max_generation": [
+        14,
+        16,
+        16
+      ],
+      "capacity_rejected": [
+        0,
+        0,
+        0
+      ],
+      "capacity_ticks": [
+        0,
+        0,
+        0
+      ],
+      "extinction_tick": [
+        -1,
+        -1,
+        -1
+      ],
+      "status": "complete",
+      "config_hash": "53e09fb3218d",
+      "elapsed_seconds": 189.79994310392067,
+      "measured_ticks": 9000,
+      "world_ticks_per_second": 142.25504791229974,
+      "agent_decisions_per_second": 3656.9926663253154,
+      "snapshot_drops": 0,
+      "observer_write_seconds": 2.2014035907341167,
+      "peak_allocated_bytes": 932459520
+    },
+    "pilot-L3-gpu": {
+      "python": "3.12.3",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "device": "cuda:0",
+      "device_name": "AMD Radeon Pro V620",
+      "rocr_visible_devices": "0",
+      "parameters_per_agent": 65497,
+      "population_slots": 384,
+      "update_targets": {
+        "prediction": [
+          "enc_w",
+          "enc_b",
+          "enc_g",
+          "enc_n",
+          "gru_iw",
+          "gru_hw",
+          "gru_ib",
+          "gru_hb",
+          "core_g",
+          "core_n",
+          "pred_w",
+          "pred_b"
+        ],
+        "local": [],
+        "rl": [
+          "act_w",
+          "act_b",
+          "value_w",
+          "value_b"
+        ]
+      },
+      "pretraining": false,
+      "external_task_rewards": false,
+      "source_hash": "7e6a7a3f4a758162f839bc9b22ae49ba6a47ba661a65ac146ee95e9013be4e05",
+      "rng": "counter_hash32_by_world_seed_individual_id_tick_stream; observer_numpy_generator_separate",
+      "evaluation_features": [
+        "own_energy_delta_or_zero",
+        "mean_rgb_delta_R",
+        "mean_rgb_delta_G",
+        "mean_rgb_delta_B",
+        "received_symbol_1",
+        "received_symbol_2",
+        "received_symbol_3",
+        "received_symbol_4",
+        "action_0_choice_0",
+        "action_0_choice_1",
+        "action_0_choice_2",
+        "action_0_choice_3",
+        "action_1_choice_0",
+        "action_1_choice_1",
+        "action_2_choice_0",
+        "action_2_choice_1",
+        "action_2_choice_2",
+        "action_2_choice_3",
+        "action_2_choice_4",
+        "action_3_choice_0",
+        "action_3_choice_1",
+        "action_3_choice_2"
+      ],
+      "tick": 9000,
+      "alive": [
+        20,
+        15,
+        17
+      ],
+      "food": [
+        30,
+        32,
+        19
+      ],
+      "energy": [
+        370.2720947265625,
+        444.006103515625,
+        366.10406494140625
+      ],
+      "births_clone_sexual": [
+        [
+          133,
+          24
+        ],
+        [
+          125,
+          29
+        ],
+        [
+          117,
+          49
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          157,
+          12
+        ],
+        [
+          161,
+          10
+        ],
+        [
+          170,
+          11
+        ]
+      ],
+      "eaten": [
+        590,
+        562,
+        569
+      ],
+      "max_generation": [
+        17,
+        14,
+        13
+      ],
+      "capacity_rejected": [
+        0,
+        0,
+        0
+      ],
+      "capacity_ticks": [
+        0,
+        0,
+        0
+      ],
+      "extinction_tick": [
+        -1,
+        -1,
+        -1
+      ],
+      "status": "complete",
+      "config_hash": "cd1700f2d4a0",
+      "elapsed_seconds": 203.74338148196694,
+      "measured_ticks": 9000,
+      "world_ticks_per_second": 132.51964212830018,
+      "agent_decisions_per_second": 3338.871648501672,
+      "snapshot_drops": 0,
+      "observer_write_seconds": 2.409669808577746,
+      "peak_allocated_bytes": 843902464
+    }
+  },
+  "benchmarks": {
+    "bench-cpu-initial": {
+      "device": "cpu",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 1,
+      "initial_per_world": 32,
+      "capacity_per_world": 128,
+      "hidden": 64,
+      "steps": 40,
+      "warmup": 5,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 227426304,
+      "status": "ok",
+      "elapsed_seconds": 4.209096272941679,
+      "world_ticks_per_second": 9.503227630392155,
+      "agent_decisions_per_second": 304.10328417254897,
+      "actual_agent_decisions": 1280,
+      "parameters_per_agent": 65497,
+      "alive_at_end": [
+        32
+      ],
+      "finite": true,
+      "peak_allocated_bytes": null
+    },
+    "bench-r9700-initial": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 1,
+      "initial_per_world": 32,
+      "capacity_per_world": 128,
+      "hidden": 64,
+      "steps": 40,
+      "warmup": 5,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 227426304,
+      "device_name": "AMD Radeon AI PRO R9700",
+      "status": "ok",
+      "elapsed_seconds": 0.7433229549787939,
+      "world_ticks_per_second": 53.81241051696184,
+      "agent_decisions_per_second": 1721.997136542779,
+      "actual_agent_decisions": 1280,
+      "parameters_per_agent": 65497,
+      "alive_at_end": [
+        32
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 410937856
+    },
+    "bench-v620-initial": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 1,
+      "initial_per_world": 32,
+      "capacity_per_world": 128,
+      "hidden": 64,
+      "steps": 40,
+      "warmup": 5,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 227426304,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 0.7792567840078846,
+      "world_ticks_per_second": 51.33096152756147,
+      "agent_decisions_per_second": 1642.590768881967,
+      "actual_agent_decisions": 1280,
+      "parameters_per_agent": 65497,
+      "alive_at_end": [
+        32
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 318663168
+    },
+    "bench-v620-noobserve": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 3,
+      "initial_per_world": 32,
+      "capacity_per_world": 128,
+      "hidden": 64,
+      "steps": 100,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 682278912,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 2.064783609006554,
+      "world_ticks_per_second": 145.29367566238162,
+      "agent_decisions_per_second": 4649.397621196212,
+      "actual_agent_decisions": 9600,
+      "parameters_per_agent": 65497,
+      "alive_at_end": [
+        32,
+        32,
+        32
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 819211776
+    },
+    "bench-v620-observe": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 3,
+      "initial_per_world": 32,
+      "capacity_per_world": 128,
+      "hidden": 64,
+      "steps": 100,
+      "warmup": 10,
+      "observation_enabled": true,
+      "predicted_memory_bytes": 682278912,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 2.051541988970712,
+      "world_ticks_per_second": 146.23146960326866,
+      "agent_decisions_per_second": 4679.407027304597,
+      "actual_agent_decisions": 9600,
+      "parameters_per_agent": 65497,
+      "alive_at_end": [
+        32,
+        32,
+        32
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 820082688
+    },
+    "bench-v620-l0-isolated": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L0",
+      "worlds": 1,
+      "initial_per_world": 32,
+      "capacity_per_world": 128,
+      "hidden": 64,
+      "steps": 100,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 97468416,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 0.7550591190811247,
+      "world_ticks_per_second": 132.43996062413737,
+      "agent_decisions_per_second": 4238.078739972396,
+      "actual_agent_decisions": 3200,
+      "parameters_per_agent": 65497,
+      "alive_at_end": [
+        32
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 169674240
+    },
+    "bench-v620-l1": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L1",
+      "worlds": 1,
+      "initial_per_world": 32,
+      "capacity_per_world": 128,
+      "hidden": 64,
+      "steps": 100,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 97468416,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 0.8690057989442721,
+      "world_ticks_per_second": 115.07403071589034,
+      "agent_decisions_per_second": 3682.368982908491,
+      "actual_agent_decisions": 3200,
+      "parameters_per_agent": 65497,
+      "alive_at_end": [
+        32
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 169674240
+    },
+    "bench-v620-h256": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 1,
+      "initial_per_world": 32,
+      "capacity_per_world": 128,
+      "hidden": 256,
+      "steps": 60,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 1427521536,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 1.8685241230996326,
+      "world_ticks_per_second": 32.110904675112245,
+      "agent_decisions_per_second": 1027.5489496035918,
+      "actual_agent_decisions": 1920,
+      "parameters_per_agent": 404953,
+      "alive_at_end": [
+        32
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 1620470272
+    },
+    "bench-v620-h1024-isolated": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 1,
+      "initial_per_world": 8,
+      "capacity_per_world": 32,
+      "hidden": 1024,
+      "steps": 40,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 4199387136,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 2.4912016020389274,
+      "world_ticks_per_second": 16.05650862108548,
+      "agent_decisions_per_second": 128.45206896868385,
+      "actual_agent_decisions": 320,
+      "parameters_per_agent": 4711897,
+      "alive_at_end": [
+        8
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 5107869184
+    },
+    "bench-v620-cap512": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L0",
+      "worlds": 1,
+      "initial_per_world": 128,
+      "capacity_per_world": 512,
+      "hidden": 16,
+      "steps": 60,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 158662656,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 0.48072410898748785,
+      "world_ticks_per_second": 124.81171399198882,
+      "agent_decisions_per_second": 15975.89939097457,
+      "actual_agent_decisions": 7680,
+      "parameters_per_agent": 26713,
+      "alive_at_end": [
+        128
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 267493888
+    },
+    "bench-v620-cap512-l3": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 1,
+      "initial_per_world": 128,
+      "capacity_per_world": 512,
+      "hidden": 16,
+      "steps": 60,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 370212864,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 1.0546726169995964,
+      "world_ticks_per_second": 56.8896916757847,
+      "agent_decisions_per_second": 7281.880534500441,
+      "actual_agent_decisions": 7680,
+      "parameters_per_agent": 26713,
+      "alive_at_end": [
+        128
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 496824320
+    },
+    "bench-v620-cap2048": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L0",
+      "worlds": 1,
+      "initial_per_world": 512,
+      "capacity_per_world": 2048,
+      "hidden": 16,
+      "steps": 60,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 634650624,
+      "device_name": "AMD Radeon Pro V620",
+      "status": "ok",
+      "elapsed_seconds": 0.5155240000458434,
+      "world_ticks_per_second": 116.38643398690351,
+      "agent_decisions_per_second": 59589.8542012946,
+      "actual_agent_decisions": 30720,
+      "parameters_per_agent": 26713,
+      "alive_at_end": [
+        512
+      ],
+      "finite": true,
+      "peak_allocated_bytes": 1066283520
+    },
+    "bench-memory-skip": {
+      "device": "cuda:0",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "mode": "L3",
+      "worlds": 1,
+      "initial_per_world": 512,
+      "capacity_per_world": 2048,
+      "hidden": 1024,
+      "steps": 10,
+      "warmup": 10,
+      "observation_enabled": false,
+      "predicted_memory_bytes": 268760776704,
+      "device_name": "AMD Radeon AI PRO R9700",
+      "status": "skipped_memory_estimate"
+    }
+  },
+  "browser": {
+    "browser": "Chromium",
+    "javascript_errors": [],
+    "canvas_color_values": 220,
+    "live_updates": 4,
+    "live_tick_before": 509,
+    "live_tick_after": 577,
+    "paused_replay_tick_before": 721,
+    "paused_replay_tick_after": 791,
+    "simulation_advanced_while_replay_paused": true,
+    "replay_frames": 256
+  },
+  "additional_current_code_run": {
+    "python": "3.12.3",
+    "torch": "2.12.0+rocm7.14.0",
+    "hip": "7.14.60850",
+    "device": "cuda:0",
+    "device_name": "AMD Radeon AI PRO R9700",
+    "rocr_visible_devices": "2",
+    "parameters_per_agent": 65497,
+    "population_slots": 384,
+    "update_targets": {
+      "prediction": [
+        "enc_w",
+        "enc_b",
+        "enc_g",
+        "enc_n",
+        "gru_iw",
+        "gru_hw",
+        "gru_ib",
+        "gru_hb",
+        "core_g",
+        "core_n",
+        "pred_w",
+        "pred_b"
+      ],
+      "local": [],
+      "rl": [
+        "act_w",
+        "act_b",
+        "value_w",
+        "value_b"
+      ]
+    },
+    "pretraining": false,
+    "external_task_rewards": false,
+    "source_hash": "104fd4da104adc5d08a9c570678b3372aec9cd04c0ba9c9e75d58149799194f3",
+    "rng": "counter_hash32_by_world_seed_individual_id_tick_stream; observer_numpy_generator_separate",
+    "evaluation_features": [
+      "own_energy_delta_or_zero",
+      "mean_rgb_delta_R",
+      "mean_rgb_delta_G",
+      "mean_rgb_delta_B",
+      "received_symbol_1",
+      "received_symbol_2",
+      "received_symbol_3",
+      "received_symbol_4",
+      "action_0_choice_0",
+      "action_0_choice_1",
+      "action_0_choice_2",
+      "action_0_choice_3",
+      "action_1_choice_0",
+      "action_1_choice_1",
+      "action_2_choice_0",
+      "action_2_choice_1",
+      "action_2_choice_2",
+      "action_2_choice_3",
+      "action_2_choice_4",
+      "action_3_choice_0",
+      "action_3_choice_1",
+      "action_3_choice_2"
+    ],
+    "tick": 1800,
+    "alive": [
+      36,
+      34,
+      30
+    ],
+    "food": [
+      24,
+      24,
+      12
+    ],
+    "energy": [
+      508.3743896484375,
+      480.764892578125,
+      476.6490478515625
+    ],
+    "births_clone_sexual": [
+      [
+        52,
+        13
+      ],
+      [
+        48,
+        16
+      ],
+      [
+        48,
+        25
+      ]
+    ],
+    "deaths_energy_age": [
+      [
+        61,
+        0
+      ],
+      [
+        62,
+        0
+      ],
+      [
+        75,
+        0
+      ]
+    ],
+    "eaten": [
+      166,
+      146,
+      144
+    ],
+    "max_generation": [
+      4,
+      4,
+      5
+    ],
+    "capacity_rejected": [
+      0,
+      0,
+      0
+    ],
+    "capacity_ticks": [
+      0,
+      0,
+      0
+    ],
+    "extinction_tick": [
+      -1,
+      -1,
+      -1
+    ],
+    "status": "complete",
+    "config_hash": "e4e29d6110d2",
+    "elapsed_seconds": 45.82898581097834,
+    "measured_ticks": 1800,
+    "world_ticks_per_second": 117.82935852589671,
+    "agent_decisions_per_second": 5752.494743989014,
+    "snapshot_drops": 0,
+    "observer_write_seconds": 0.4800106780603528,
+    "peak_allocated_bytes": 929403392
+  },
+  "excluded_runs": {
+    "pilot-L2": "aborted CPU launch, replaced by pilot-L2-gpu",
+    "bench-v620-l0": "overlapped another benchmark on the same GPU; use isolated replacement",
+    "bench-v620-h1024": "overlapped another benchmark on the same GPU; use isolated replacement"
+  }
+}

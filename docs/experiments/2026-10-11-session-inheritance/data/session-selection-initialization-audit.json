@@ -1,0 +1,327 @@
+{
+  "checked_initial_states": 27,
+  "all_exact": true,
+  "reports": [
+    {
+      "arm": "acquired",
+      "session": 2,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "531babde694261d4d9e9ee50addb8f530033afc268103b0f95317daa3a9b7a0e"
+    },
+    {
+      "arm": "acquired",
+      "session": 3,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "a20bce1a75fc1d5f79fad5d90a1971ac1977799750dfc069bbd9373ce2cbd165"
+    },
+    {
+      "arm": "acquired",
+      "session": 4,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "3d945554a73dd061660ddf83e5344ef94b6a2772cc7d9b2c656fed9b5e233c4c"
+    },
+    {
+      "arm": "acquired",
+      "session": 5,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "1a4566896c4c7454cc1b7a06d1cd6b80553edbc7c08f336dd62e56a720866dd1"
+    },
+    {
+      "arm": "acquired",
+      "session": 6,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "2108ab81ddebc2431307f094ecf9cf0e7ccb9f48ea3c9b95cb0814a1fe118443"
+    },
+    {
+      "arm": "acquired",
+      "session": 7,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "fc31f36fb7c1d15a4abeaeac10a090d91109ca888ff578c23e28bb77a161cf84"
+    },
+    {
+      "arm": "acquired",
+      "session": 8,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "968e88274c63907239aafeef2d9cee7869aa4306baca73919b038af0043e002c"
+    },
+    {
+      "arm": "acquired",
+      "session": 9,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "8d72175260cfe3550a0e76a7272188960dfdb35a16e648f02b9cd3bee2d80c21"
+    },
+    {
+      "arm": "acquired",
+      "session": 10,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "41dd3b771a05676d4ab669dc0efdaf1a7f5c85c9a71410cf57dd2d02d5923330"
+    },
+    {
+      "arm": "genome",
+      "session": 2,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "531babde694261d4d9e9ee50addb8f530033afc268103b0f95317daa3a9b7a0e"
+    },
+    {
+      "arm": "genome",
+      "session": 3,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "a20bce1a75fc1d5f79fad5d90a1971ac1977799750dfc069bbd9373ce2cbd165"
+    },
+    {
+      "arm": "genome",
+      "session": 4,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "3d945554a73dd061660ddf83e5344ef94b6a2772cc7d9b2c656fed9b5e233c4c"
+    },
+    {
+      "arm": "genome",
+      "session": 5,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "1a4566896c4c7454cc1b7a06d1cd6b80553edbc7c08f336dd62e56a720866dd1"
+    },
+    {
+      "arm": "genome",
+      "session": 6,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "2108ab81ddebc2431307f094ecf9cf0e7ccb9f48ea3c9b95cb0814a1fe118443"
+    },
+    {
+      "arm": "genome",
+      "session": 7,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "fc31f36fb7c1d15a4abeaeac10a090d91109ca888ff578c23e28bb77a161cf84"
+    },
+    {
+      "arm": "genome",
+      "session": 8,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "968e88274c63907239aafeef2d9cee7869aa4306baca73919b038af0043e002c"
+    },
+    {
+      "arm": "genome",
+      "session": 9,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "8d72175260cfe3550a0e76a7272188960dfdb35a16e648f02b9cd3bee2d80c21"
+    },
+    {
+      "arm": "genome",
+      "session": 10,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "41dd3b771a05676d4ab669dc0efdaf1a7f5c85c9a71410cf57dd2d02d5923330"
+    },
+    {
+      "arm": "fresh",
+      "session": 2,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "531babde694261d4d9e9ee50addb8f530033afc268103b0f95317daa3a9b7a0e"
+    },
+    {
+      "arm": "fresh",
+      "session": 3,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "a20bce1a75fc1d5f79fad5d90a1971ac1977799750dfc069bbd9373ce2cbd165"
+    },
+    {
+      "arm": "fresh",
+      "session": 4,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "3d945554a73dd061660ddf83e5344ef94b6a2772cc7d9b2c656fed9b5e233c4c"
+    },
+    {
+      "arm": "fresh",
+      "session": 5,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "1a4566896c4c7454cc1b7a06d1cd6b80553edbc7c08f336dd62e56a720866dd1"
+    },
+    {
+      "arm": "fresh",
+      "session": 6,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "2108ab81ddebc2431307f094ecf9cf0e7ccb9f48ea3c9b95cb0814a1fe118443"
+    },
+    {
+      "arm": "fresh",
+      "session": 7,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "fc31f36fb7c1d15a4abeaeac10a090d91109ca888ff578c23e28bb77a161cf84"
+    },
+    {
+      "arm": "fresh",
+      "session": 8,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "968e88274c63907239aafeef2d9cee7869aa4306baca73919b038af0043e002c"
+    },
+    {
+      "arm": "fresh",
+      "session": 9,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "8d72175260cfe3550a0e76a7272188960dfdb35a16e648f02b9cd3bee2d80c21"
+    },
+    {
+      "arm": "fresh",
+      "session": 10,
+      "exact_transfer": true,
+      "reset_correct": true,
+      "world_digest": "41dd3b771a05676d4ab669dc0efdaf1a7f5c85c9a71410cf57dd2d02d5923330"
+    }
+  ],
+  "completed_selection_audits": [
+    {
+      "arm": "acquired",
+      "session": 2,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "acquired",
+      "session": 3,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "acquired",
+      "session": 4,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "acquired",
+      "session": 5,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "acquired",
+      "session": 6,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "acquired",
+      "session": 7,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "acquired",
+      "session": 8,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "acquired",
+      "session": 9,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "acquired",
+      "session": 10,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 2,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 3,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 4,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 5,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 6,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 7,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 8,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 9,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "genome",
+      "session": 10,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "fresh",
+      "session": 2,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "fresh",
+      "session": 3,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "fresh",
+      "session": 4,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "fresh",
+      "session": 5,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "fresh",
+      "session": 6,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "fresh",
+      "session": 7,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "fresh",
+      "session": 8,
+      "matches_selection_rule": true
+    },
+    {
+      "arm": "fresh",
+      "session": 9,
+      "matches_selection_rule": true
+    }
+  ]
+}

@@ -1,0 +1,1270 @@
+{
+  "study": "rep20-20261012",
+  "audit": {
+    "training_runs": 120,
+    "evaluation_runs": 18,
+    "training_world_sessions": 800,
+    "evaluation_world_sessions": 120,
+    "training_censored": [
+      {
+        "job": "B-h064-e032-b02",
+        "session": 1,
+        "trial": 18
+      }
+    ],
+    "training_stable_world_sessions": 1,
+    "maximum_consecutive_stable_sessions": 1,
+    "source_hash": "74c466efe891c93024d37512bc9426bbc05aa6da928dc7044b96bfd380f9555c"
+  },
+  "input_hashes": {
+    "runs/rep20-20261012-plan.json": "5a22843282a953f7597e2142ac4a77e07de6015b7f4ad86458d843a5afee568a",
+    "runs/rep20-20261012-execution.json": "071946c5e9b97f3cc684bd40bfb853ad7622e1b63144e243d574ff53c19387d0",
+    "runs/rep20-20261012-validation.json": "9c326a18977ed7a2cf941d4d24edd6c90f766053fe9edd03f9001db0c0376e51",
+    "runs/rep20-20261012-analysis/results.json": "882f8e82a3a64ec6f9807de5e9e5eab3fe3a75d0821350e1f22ab712162833c2",
+    "runs/rep20-20261012-analysis/trials.csv": "27567c8e8c10737179e0273f7a6cdea16869149b99f5b8abb494228718b7472e",
+    "runs/rep20-20261012-a-e032-b00-h064.json": "ebe1fc9dd443dc261a28b234f975efe883876ec38972e0be824051844fc1b0aa",
+    "runs/rep20-20261012-a-e032-b00-protocol.json": "40211784969cd0047ef9d5cf223069c91814d13b221298b6f32b94a510c9eb3d",
+    "runs/rep20-20261012-a-e032-b00-h192.json": "8f6a7b29e299b14f0eb3b15fb0582c52d4e59651a4afbbbf16f6bfc41dbb7705",
+    "runs/rep20-20261012-a-e064-b00-h064.json": "37b494b9ead0a35b9e84a181bd04ccd4faff06bed93716b1174e7a775067a7be",
+    "runs/rep20-20261012-a-e064-b00-protocol.json": "e105bf586dabec62a3f89dae56052baa4549d56a43d9cfda3f4e0698b59956ba",
+    "runs/rep20-20261012-a-e064-b00-h192.json": "de586239df1268f4d6cd40d9ab6b6c5edbb36142023dc2a0b73e553021a038ce",
+    "runs/rep20-20261012-b-e032-b00-h064.json": "2ef531950715947dde4e7332b4ffbb63e861a2cede5a44bfd7cb40d753883c22",
+    "runs/rep20-20261012-b-e032-b00-protocol.json": "a60cfed92fa894d74ebdbfee9269f4d9e18b3f47e270103fc8de4421fe7bfc61",
+    "runs/rep20-20261012-a-e032-b01-h064.json": "ee27c3cfeda18dea98b75e13232e5c30f03028e7e007823528763b85b8a537cd",
+    "runs/rep20-20261012-a-e032-b01-protocol.json": "c64281853d31a55ceca8afe7fad4c8e00d4ce218a56b155bd43e03d2e7472545",
+    "runs/rep20-20261012-a-e032-b01-h192.json": "cb158a1ed33a5be7802e428a3c6168a7d5b4a95bc17c0ef1fa3bccc9e51edda7",
+    "runs/rep20-20261012-a-e064-b01-h064.json": "4e0ce7bdfcb5d7fbfb377f35926565e7660ac32f4a9ce30451c7a58641798de2",
+    "runs/rep20-20261012-a-e064-b01-protocol.json": "9271fa498616e4ab9fee4bccd63d3174fa572be741642169a931cd12182af66d",
+    "runs/rep20-20261012-a-e064-b01-h192.json": "6497c637d350214b33cb4230223dd9bf2a7ad86d4db6416b1e0d0f28abc7095f",
+    "runs/rep20-20261012-b-e032-b01-h064.json": "fba1db9d07e300a0db838499589548d118e5f0a20faedf5927fb655f962653c4",
+    "runs/rep20-20261012-b-e032-b01-protocol.json": "96638e17ad08173ccff0a139177ef04b74e3ae139740bd03c7c3fbd32889b250",
+    "runs/rep20-20261012-a-e032-b02-h064.json": "33a554be4b0175a6cbe87aaa9fb229d3037a8b8f47a7acb0e308ef3f0b16cf49",
+    "runs/rep20-20261012-a-e032-b02-protocol.json": "26b6cf6b3de534f47ebfd2bcc5305b31c589ae6d69c950bbc3de7d43f6d4b8bb",
+    "runs/rep20-20261012-a-e032-b02-h192.json": "333f0f27428120f2499f3c16d1e0187509d9ef9471a9d79be79f15d1bd0ef7c2",
+    "runs/rep20-20261012-a-e064-b02-h064.json": "6639b5b15f304877bb0cdd8a946b2950b6685e86c1aae5e985f903ba3ba71cf4",
+    "runs/rep20-20261012-a-e064-b02-protocol.json": "c9ddbbb4203ca330519b99317e797c941a9080e0846a04ef5a9944824c9c6987",
+    "runs/rep20-20261012-a-e064-b02-h192.json": "df837ee4b8e1f825fe0d38528a88d22cf58aecd40045f3d343d174e8cbde1918",
+    "runs/rep20-20261012-b-e032-b02-h064.json": "3dd4afc1896d784460aa2b367d6ebdfb2834ecf500019b09b728cc7eac707772",
+    "runs/rep20-20261012-b-e032-b02-protocol.json": "0530ad3716fce3345ef21745f7dd9be44e36969a9207e768d080382ec80f8bfc"
+  },
+  "primary": {
+    "study": "rep20-20261012",
+    "status": "complete",
+    "completed_primary_outcomes": 120,
+    "planned_primary_outcomes": 120,
+    "cells": {
+      "A-h064-e032-s005": {
+        "id": "A-h064-e032-s005",
+        "cohort": "A",
+        "hidden": 64,
+        "encoder_width": 32,
+        "session": 5,
+        "trials": 20,
+        "n": 20,
+        "mean_persistence_capped": 3760.55,
+        "median_persistence_capped": 3713.5,
+        "censored_worlds": 0,
+        "mean_food": 81.0,
+        "stable_worlds": 0
+      },
+      "A-h192-e032-s005": {
+        "id": "A-h192-e032-s005",
+        "cohort": "A",
+        "hidden": 192,
+        "encoder_width": 32,
+        "session": 5,
+        "trials": 20,
+        "n": 20,
+        "mean_persistence_capped": 3618.15,
+        "median_persistence_capped": 3300.0,
+        "censored_worlds": 0,
+        "mean_food": 78.85,
+        "stable_worlds": 0
+      },
+      "A-h064-e064-s005": {
+        "id": "A-h064-e064-s005",
+        "cohort": "A",
+        "hidden": 64,
+        "encoder_width": 64,
+        "session": 5,
+        "trials": 20,
+        "n": 20,
+        "mean_persistence_capped": 3761.2,
+        "median_persistence_capped": 3646.5,
+        "censored_worlds": 0,
+        "mean_food": 73.95,
+        "stable_worlds": 0
+      },
+      "A-h192-e064-s005": {
+        "id": "A-h192-e064-s005",
+        "cohort": "A",
+        "hidden": 192,
+        "encoder_width": 64,
+        "session": 5,
+        "trials": 20,
+        "n": 20,
+        "mean_persistence_capped": 3259.75,
+        "median_persistence_capped": 3080.0,
+        "censored_worlds": 0,
+        "mean_food": 78.9,
+        "stable_worlds": 0
+      },
+      "B-h064-e032-s005": {
+        "id": "B-h064-e032-s005",
+        "cohort": "B",
+        "hidden": 64,
+        "encoder_width": 32,
+        "session": 5,
+        "trials": 20,
+        "n": 20,
+        "mean_persistence_capped": 3566.8,
+        "median_persistence_capped": 3619.5,
+        "censored_worlds": 0,
+        "mean_food": 80.1,
+        "stable_worlds": 0
+      },
+      "B-h064-e032-s020": {
+        "id": "B-h064-e032-s020",
+        "cohort": "B",
+        "hidden": 64,
+        "encoder_width": 32,
+        "session": 20,
+        "trials": 20,
+        "n": 20,
+        "mean_persistence_capped": 3520.8,
+        "median_persistence_capped": 3474.0,
+        "censored_worlds": 0,
+        "mean_food": 72.4,
+        "stable_worlds": 0
+      }
+    },
+    "paired_contrasts": {
+      "hidden at input32": {
+        "n": 20,
+        "trial_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "differences": [
+          1754,
+          -712,
+          -441,
+          -1246,
+          0,
+          -1830,
+          1912,
+          -1579,
+          -556,
+          -528,
+          411,
+          -267,
+          -1065,
+          34,
+          2663,
+          820,
+          -2006,
+          289,
+          -682,
+          181
+        ],
+        "mean": -142.4,
+        "median": -354.0,
+        "positive_fraction": 0.4,
+        "bootstrap_mean_95_interval": [
+          -628.9612500000001,
+          384.75874999999985
+        ]
+      },
+      "hidden at input64": {
+        "n": 20,
+        "trial_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "differences": [
+          7,
+          -406,
+          -537,
+          293,
+          -710,
+          -125,
+          102,
+          -1758,
+          -1068,
+          -753,
+          1226,
+          -1511,
+          298,
+          -641,
+          -410,
+          -1009,
+          -887,
+          -502,
+          211,
+          -1849
+        ],
+        "mean": -501.45,
+        "median": -519.5,
+        "positive_fraction": 0.3,
+        "bootstrap_mean_95_interval": [
+          -798.7025,
+          -189.6
+        ]
+      },
+      "input at hidden64": {
+        "n": 20,
+        "trial_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "differences": [
+          -238,
+          -914,
+          317,
+          -1253,
+          293,
+          -1122,
+          173,
+          -15,
+          99,
+          256,
+          -116,
+          765,
+          -928,
+          1113,
+          -337,
+          1082,
+          -1022,
+          1191,
+          -190,
+          859
+        ],
+        "mean": 0.65,
+        "median": 42.0,
+        "positive_fraction": 0.5,
+        "bootstrap_mean_95_interval": [
+          -309.85625000000005,
+          294.65749999999986
+        ]
+      },
+      "input at hidden192": {
+        "n": 20,
+        "trial_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "differences": [
+          -1985,
+          -608,
+          221,
+          286,
+          -417,
+          583,
+          -1637,
+          -194,
+          -413,
+          31,
+          699,
+          -479,
+          435,
+          438,
+          -3410,
+          -747,
+          97,
+          400,
+          703,
+          -1171
+        ],
+        "mean": -358.4,
+        "median": -81.5,
+        "positive_fraction": 0.5,
+        "bootstrap_mean_95_interval": [
+          -808.3,
+          37.12374999999965
+        ]
+      },
+      "interaction": {
+        "n": 20,
+        "trial_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "differences": [
+          -1747,
+          306,
+          -96,
+          1539,
+          -710,
+          1705,
+          -1810,
+          -179,
+          -512,
+          -225,
+          815,
+          -1244,
+          1363,
+          -675,
+          -3073,
+          -1829,
+          1119,
+          -791,
+          893,
+          -2030
+        ],
+        "mean": -359.05,
+        "median": -368.5,
+        "positive_fraction": 0.35,
+        "bootstrap_mean_95_interval": [
+          -897.6025000000001,
+          194.80124999999998
+        ]
+      },
+      "sessions20 minus5": {
+        "n": 20,
+        "trial_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "differences": [
+          418,
+          1599,
+          476,
+          -189,
+          -1242,
+          -518,
+          -419,
+          -741,
+          42,
+          -13,
+          727,
+          349,
+          223,
+          255,
+          -942,
+          -1034,
+          -1293,
+          1575,
+          -582,
+          389
+        ],
+        "mean": -46.0,
+        "median": 14.5,
+        "positive_fraction": 0.5,
+        "bootstrap_mean_95_interval": [
+          -379.70375,
+          314.35624999999993
+        ]
+      }
+    },
+    "jobs": {
+      "A-h064-e032-b00": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e032-b00-h064-e005"
+      },
+      "A-h192-e032-b00": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e032-b00-h192-e005"
+      },
+      "A-h064-e064-b00": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e064-b00-h064-e005"
+      },
+      "A-h192-e064-b00": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e064-b00-h192-e005"
+      },
+      "B-h064-e032-b00": {
+        "status": "complete",
+        "completed_sessions": 20,
+        "planned_sessions": 20,
+        "phase": "complete",
+        "active_run": "rep20-20261012-b-e032-b00-h064-e020"
+      },
+      "A-h064-e032-b01": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e032-b01-h064-e005"
+      },
+      "A-h192-e032-b01": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e032-b01-h192-e005"
+      },
+      "A-h064-e064-b01": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e064-b01-h064-e005"
+      },
+      "A-h192-e064-b01": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e064-b01-h192-e005"
+      },
+      "B-h064-e032-b01": {
+        "status": "complete",
+        "completed_sessions": 20,
+        "planned_sessions": 20,
+        "phase": "complete",
+        "active_run": "rep20-20261012-b-e032-b01-h064-e020"
+      },
+      "A-h064-e032-b02": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e032-b02-h064-e005"
+      },
+      "A-h192-e032-b02": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e032-b02-h192-e005"
+      },
+      "A-h064-e064-b02": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e064-b02-h064-e005"
+      },
+      "A-h192-e064-b02": {
+        "status": "complete",
+        "completed_sessions": 5,
+        "planned_sessions": 5,
+        "phase": "complete",
+        "active_run": "rep20-20261012-a-e064-b02-h192-e005"
+      },
+      "B-h064-e032-b02": {
+        "status": "complete",
+        "completed_sessions": 20,
+        "planned_sessions": 20,
+        "phase": "complete",
+        "active_run": "rep20-20261012-b-e032-b02-h064-e020"
+      }
+    },
+    "note": "80 architecture outcomes plus 40 paired time outcomes; 100 learning chains. Intervals resample paired trials within fixed GPU blocks, are pointwise exploratory intervals, and are not adjusted for multiple contrasts."
+  },
+  "secondary": {
+    "A-h064-e032-s005": {
+      "agent_ticks": 92856.4,
+      "mean_individual_lifetime": 1108.805968413529,
+      "last_survivor_age": 2557.1,
+      "last_survivor_birth_tick": 1203.45,
+      "food": 81.0,
+      "food_at_1000": 57.1,
+      "births": 52.35,
+      "metabolic_energy": 1485.7023999999997,
+      "birth_overhead_energy": 523.5,
+      "other_energy_residual": 400.7976,
+      "last_death_age_cause_count": 10
+    },
+    "A-h192-e032-s005": {
+      "agent_ticks": 92181.5,
+      "mean_individual_lifetime": 1105.6735788547703,
+      "last_survivor_age": 2412.25,
+      "last_survivor_birth_tick": 1205.9,
+      "food": 78.85,
+      "food_at_1000": 58.5,
+      "births": 52.2,
+      "metabolic_energy": 1474.9040000000002,
+      "birth_overhead_energy": 522.0,
+      "other_energy_residual": 391.59599999999995,
+      "last_death_age_cause_count": 5
+    },
+    "A-h064-e064-s005": {
+      "agent_ticks": 90196.55,
+      "mean_individual_lifetime": 1068.0117643215945,
+      "last_survivor_age": 2645.1,
+      "last_survivor_birth_tick": 1116.1,
+      "food": 73.95,
+      "food_at_1000": 55.9,
+      "births": 52.85,
+      "metabolic_energy": 1443.1448,
+      "birth_overhead_energy": 528.5,
+      "other_energy_residual": 367.8552,
+      "last_death_age_cause_count": 7
+    },
+    "A-h192-e064-s005": {
+      "agent_ticks": 90333.0,
+      "mean_individual_lifetime": 1086.2686938298943,
+      "last_survivor_age": 2368.65,
+      "last_survivor_birth_tick": 891.1,
+      "food": 78.9,
+      "food_at_1000": 66.4,
+      "births": 51.85,
+      "metabolic_energy": 1445.328,
+      "birth_overhead_energy": 518.5,
+      "other_energy_residual": 425.1719999999999,
+      "last_death_age_cause_count": 3
+    },
+    "B-h064-e032-s005": {
+      "agent_ticks": 91638.4,
+      "mean_individual_lifetime": 1081.5179843051963,
+      "last_survivor_age": 2556.275,
+      "last_survivor_birth_tick": 1010.525,
+      "food": 80.1,
+      "food_at_1000": 60.7,
+      "births": 53.6,
+      "metabolic_energy": 1466.2144000000003,
+      "birth_overhead_energy": 536.0,
+      "other_energy_residual": 398.78559999999993,
+      "last_death_age_cause_count": 9
+    },
+    "B-h064-e032-s020": {
+      "agent_ticks": 88545.8,
+      "mean_individual_lifetime": 1099.041123912507,
+      "last_survivor_age": 2441.25,
+      "last_survivor_birth_tick": 1079.55,
+      "food": 72.4,
+      "food_at_1000": 57.3,
+      "births": 49.8,
+      "metabolic_energy": 1416.7328,
+      "birth_overhead_energy": 498.0,
+      "other_energy_residual": 409.26719999999995,
+      "last_death_age_cause_count": 4
+    }
+  },
+  "supplementary_tests": {
+    "hidden at input32": {
+      "exact_signflip_p": 0.6097373962402344,
+      "holm_p": 1.0
+    },
+    "hidden at input64": {
+      "exact_signflip_p": 0.008031845092773438,
+      "holm_p": 0.048191070556640625
+    },
+    "input at hidden64": {
+      "exact_signflip_p": 0.9971103668212891,
+      "holm_p": 1.0
+    },
+    "input at hidden192": {
+      "exact_signflip_p": 0.1428546905517578,
+      "holm_p": 0.7142734527587891
+    },
+    "interaction": {
+      "exact_signflip_p": 0.2440166473388672,
+      "holm_p": 0.9760665893554688
+    },
+    "sessions20 minus5": {
+      "exact_signflip_p": 0.8042449951171875,
+      "holm_p": 1.0
+    }
+  },
+  "methods": {
+    "primary_intervals": "predeclared GPU-stratified paired-trial percentile bootstrap, 10000 draws, pointwise 95%",
+    "secondary_intervals": "same trial/GPU strata, 20000 draws; exploratory",
+    "signflip": "post-hoc supplementary exact sign reversal of 20 paired differences, two-sided absolute sum, all 2^20 patterns; requires sign symmetry / within-pair exchangeability",
+    "multiple_testing": "Holm across the six predeclared contrast statistics for supplementary p-values",
+    "energy_residual": "movement plus discarded age-death energy plus food overflow, minus terminal clamp overshoot, with floating-point error; cannot identify movement alone",
+    "prediction_loss": "transition-weighted population averages on each model own trajectories, not matched observation difficulty"
+  },
+  "secondary_pairs": {
+    "A-h192-e064-s005 minus A-h064-e064-s005": {
+      "agent_ticks": {
+        "mean": 136.45,
+        "mean_95_interval": [
+          -3426.5887500000003,
+          3981.7899999999963
+        ],
+        "values": [
+          12489.0,
+          -4574.0,
+          1505.0,
+          417.0,
+          -5848.0,
+          3850.0,
+          5214.0,
+          17031.0,
+          -2151.0,
+          7744.0,
+          -85.0,
+          3768.0,
+          -10516.0,
+          -9781.0,
+          -1582.0,
+          -16006.0,
+          -5817.0,
+          -7223.0,
+          17738.0,
+          -3444.0
+        ]
+      },
+      "mean_individual_lifetime": {
+        "mean": 18.256929508299997,
+        "mean_95_interval": [
+          -66.4515865835863,
+          100.60858818357471
+        ],
+        "values": [
+          268.79705056179773,
+          -85.1942491014222,
+          183.04953219592733,
+          -17.72474747474746,
+          -123.84571752694274,
+          102.88211072136642,
+          -49.567721293992236,
+          166.40286919831237,
+          -25.607142857143003,
+          317.2940535491905,
+          65.45416316232127,
+          343.98638254948935,
+          -285.9972778004628,
+          -352.30872591873083,
+          -114.52119517221081,
+          -251.1511961722489,
+          -43.45842629778372,
+          -78.51086956521738,
+          246.67604313173933,
+          98.48365427675776
+        ]
+      },
+      "last_survivor_age": {
+        "mean": -276.45,
+        "mean_95_interval": [
+          -565.75,
+          33.55249999999978
+        ],
+        "values": [
+          -223.0,
+          -673.0,
+          524.0,
+          175.0,
+          -1071.0,
+          -1186.0,
+          -960.0,
+          670.0,
+          -1053.0,
+          0.0,
+          -13.0,
+          954.0,
+          -84.0,
+          -625.0,
+          -368.0,
+          -1098.0,
+          -130.0,
+          -1105.0,
+          1330.0,
+          -593.0
+        ]
+      },
+      "last_survivor_birth_tick": {
+        "mean": -225.0,
+        "mean_95_interval": [
+          -643.40375,
+          175.25249999999977
+        ],
+        "values": [
+          230.0,
+          267.0,
+          -1061.0,
+          118.0,
+          361.0,
+          1061.0,
+          1062.0,
+          -2428.0,
+          -15.0,
+          -753.0,
+          1239.0,
+          -2465.0,
+          382.0,
+          -16.0,
+          -42.0,
+          89.0,
+          -757.0,
+          603.0,
+          -1119.0,
+          -1256.0
+        ]
+      },
+      "food": {
+        "mean": 4.95,
+        "mean_95_interval": [
+          -3.35,
+          15.051249999999891
+        ],
+        "values": [
+          -2,
+          1,
+          0,
+          -1,
+          -3,
+          -1,
+          1,
+          67,
+          -7,
+          7,
+          -31,
+          0,
+          3,
+          8,
+          -3,
+          -3,
+          -1,
+          3,
+          65,
+          -4
+        ]
+      },
+      "food_at_1000": {
+        "mean": 10.5,
+        "mean_95_interval": [
+          -1.05,
+          20.45
+        ],
+        "values": [
+          -3,
+          5,
+          5,
+          0,
+          4,
+          2,
+          -2,
+          59,
+          0,
+          37,
+          -72,
+          9,
+          2,
+          30,
+          2,
+          21,
+          17,
+          11,
+          49,
+          34
+        ]
+      },
+      "births": {
+        "mean": -1.0,
+        "mean_95_interval": [
+          -5.3512499999999985,
+          3.2
+        ],
+        "values": [
+          -9,
+          2,
+          -13,
+          2,
+          4,
+          -4,
+          10,
+          4,
+          0,
+          -15,
+          -5,
+          -26,
+          14,
+          16,
+          7,
+          7,
+          -2,
+          0,
+          -2,
+          -10
+        ]
+      }
+    },
+    "B-h064-e032-s020 minus B-h064-e032-s005": {
+      "agent_ticks": {
+        "mean": -3092.6,
+        "mean_95_interval": [
+          -5667.60875,
+          -657.6412500000051
+        ],
+        "values": [
+          -1.0,
+          716.0,
+          -2817.0,
+          1093.0,
+          -1179.0,
+          -15880.0,
+          -430.0,
+          1483.0,
+          -13392.0,
+          -1994.0,
+          -13945.0,
+          -7311.0,
+          -1365.0,
+          8942.0,
+          -4843.0,
+          -2230.0,
+          328.0,
+          -1136.0,
+          -3502.0,
+          -4389.0
+        ]
+      },
+      "mean_individual_lifetime": {
+        "mean": 17.523139607310746,
+        "mean_95_interval": [
+          -34.89492718034581,
+          71.32036055451742
+        ],
+        "values": [
+          -141.06731946144419,
+          40.97093307278942,
+          -30.29032258064524,
+          200.3412438625204,
+          99.3529109589042,
+          -89.5453149001537,
+          -33.69620253164567,
+          292.8006272401433,
+          -36.22809044396786,
+          85.97217391304343,
+          42.84719947592521,
+          -195.31083591331264,
+          -2.817894736842163,
+          8.978260869565247,
+          14.555882352941126,
+          33.69892473118284,
+          186.99515151515152,
+          122.42815934065948,
+          -64.04829545454538,
+          -185.47439916405438
+        ]
+      },
+      "last_survivor_age": {
+        "mean": -115.025,
+        "mean_95_interval": [
+          -442.60062500000004,
+          185.675
+        ],
+        "values": [
+          467.0,
+          721.5,
+          -1488.0,
+          886.0,
+          -606.0,
+          -113.0,
+          -306.0,
+          263.0,
+          153.0,
+          -19.0,
+          -1516.0,
+          841.0,
+          -99.0,
+          -445.0,
+          -1481.0,
+          0.0,
+          369.0,
+          670.0,
+          -598.0,
+          0.0
+        ]
+      },
+      "last_survivor_birth_tick": {
+        "mean": 69.025,
+        "mean_95_interval": [
+          -335.325,
+          494.3762499999999
+        ],
+        "values": [
+          -49.0,
+          877.5,
+          1964.0,
+          -1075.0,
+          -636.0,
+          -405.0,
+          -113.0,
+          -1004.0,
+          -111.0,
+          6.0,
+          2243.0,
+          -492.0,
+          322.0,
+          700.0,
+          539.0,
+          -1034.0,
+          -1662.0,
+          905.0,
+          16.0,
+          389.0
+        ]
+      },
+      "food": {
+        "mean": -7.7,
+        "mean_95_interval": [
+          -15.6,
+          -1.1
+        ],
+        "values": [
+          -2,
+          7,
+          -5,
+          2,
+          -2,
+          -51,
+          0,
+          4,
+          -44,
+          -3,
+          -41,
+          4,
+          0,
+          1,
+          -3,
+          0,
+          7,
+          -11,
+          2,
+          -19
+        ]
+      },
+      "food_at_1000": {
+        "mean": -3.4,
+        "mean_95_interval": [
+          -15.95,
+          8.25
+        ],
+        "values": [
+          -8,
+          -12,
+          -6,
+          2,
+          36,
+          -49,
+          0,
+          23,
+          -12,
+          1,
+          -66,
+          21,
+          -1,
+          -2,
+          27,
+          7,
+          41,
+          -39,
+          15,
+          -46
+        ]
+      },
+      "births": {
+        "mean": -3.8,
+        "mean_95_interval": [
+          -7.6,
+          0.1
+        ],
+        "values": [
+          10,
+          -3,
+          0,
+          -16,
+          -7,
+          -9,
+          2,
+          -21,
+          -10,
+          -6,
+          -15,
+          10,
+          -1,
+          8,
+          -5,
+          -6,
+          -9,
+          -11,
+          3,
+          10
+        ]
+      }
+    }
+  },
+  "prediction": [
+    {
+      "cohort": "A",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "0",
+      "loss": 0.010196258559345561,
+      "decisions": 653781
+    },
+    {
+      "cohort": "A",
+      "hidden": 192,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "0",
+      "loss": 0.010390613748416952,
+      "decisions": 638799
+    },
+    {
+      "cohort": "A",
+      "hidden": 64,
+      "encoder_width": 64,
+      "session": 5,
+      "gpu": "0",
+      "loss": 0.010081486791918755,
+      "decisions": 635688
+    },
+    {
+      "cohort": "A",
+      "hidden": 192,
+      "encoder_width": 64,
+      "session": 5,
+      "gpu": "0",
+      "loss": 0.010226922644687941,
+      "decisions": 648741
+    },
+    {
+      "cohort": "B",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "0",
+      "loss": 0.010962196501298519,
+      "decisions": 629371
+    },
+    {
+      "cohort": "B",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 20,
+      "gpu": "0",
+      "loss": 0.00891960857146248,
+      "decisions": 610873
+    },
+    {
+      "cohort": "A",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "1",
+      "loss": 0.01070163334527964,
+      "decisions": 645597
+    },
+    {
+      "cohort": "A",
+      "hidden": 192,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "1",
+      "loss": 0.009349366518845235,
+      "decisions": 633887
+    },
+    {
+      "cohort": "A",
+      "hidden": 64,
+      "encoder_width": 64,
+      "session": 5,
+      "gpu": "1",
+      "loss": 0.010375364862672968,
+      "decisions": 618833
+    },
+    {
+      "cohort": "A",
+      "hidden": 192,
+      "encoder_width": 64,
+      "session": 5,
+      "gpu": "1",
+      "loss": 0.009623561970016868,
+      "decisions": 624843
+    },
+    {
+      "cohort": "B",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "1",
+      "loss": 0.010740308827125967,
+      "decisions": 640932
+    },
+    {
+      "cohort": "B",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 20,
+      "gpu": "1",
+      "loss": 0.008914152776504035,
+      "decisions": 613350
+    },
+    {
+      "cohort": "A",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "2",
+      "loss": 0.010348832852420439,
+      "decisions": 557750
+    },
+    {
+      "cohort": "A",
+      "hidden": 192,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "2",
+      "loss": 0.009495132560888195,
+      "decisions": 570944
+    },
+    {
+      "cohort": "A",
+      "hidden": 64,
+      "encoder_width": 64,
+      "session": 5,
+      "gpu": "2",
+      "loss": 0.01040958017037595,
+      "decisions": 549410
+    },
+    {
+      "cohort": "A",
+      "hidden": 192,
+      "encoder_width": 64,
+      "session": 5,
+      "gpu": "2",
+      "loss": 0.00900904718264844,
+      "decisions": 533076
+    },
+    {
+      "cohort": "B",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 5,
+      "gpu": "2",
+      "loss": 0.01046512685789338,
+      "decisions": 562465
+    },
+    {
+      "cohort": "B",
+      "hidden": 64,
+      "encoder_width": 32,
+      "session": 20,
+      "gpu": "2",
+      "loss": 0.009169442661946468,
+      "decisions": 546693
+    }
+  ],
+  "prediction_weighted": {
+    "5": 0.010732053249255361,
+    "20": 0.008994844345825127
+  }
+}

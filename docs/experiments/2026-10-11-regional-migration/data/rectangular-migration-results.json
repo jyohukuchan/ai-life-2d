@@ -1,0 +1,113 @@
+{
+  "RANDOM": {
+    "population_2000": [
+      5,
+      7,
+      6
+    ],
+    "final": [
+      0,
+      0,
+      0
+    ],
+    "extinction_tick": [
+      2365,
+      2359,
+      2390
+    ],
+    "eaten": [
+      0,
+      0,
+      0
+    ],
+    "births_clone_sexual": [
+      [
+        28,
+        12
+      ],
+      [
+        30,
+        12
+      ],
+      [
+        32,
+        15
+      ]
+    ],
+    "all_events_verified": true
+  },
+  "L0": {
+    "population_2000": [
+      6,
+      5,
+      11
+    ],
+    "final": [
+      0,
+      0,
+      0
+    ],
+    "extinction_tick": [
+      3178,
+      2357,
+      4525
+    ],
+    "eaten": [
+      8,
+      0,
+      45
+    ],
+    "births_clone_sexual": [
+      [
+        32,
+        10
+      ],
+      [
+        30,
+        13
+      ],
+      [
+        42,
+        10
+      ]
+    ],
+    "all_events_verified": true
+  },
+  "L3": {
+    "population_2000": [
+      6,
+      6,
+      11
+    ],
+    "final": [
+      0,
+      0,
+      0
+    ],
+    "extinction_tick": [
+      2409,
+      2165,
+      2632
+    ],
+    "eaten": [
+      0,
+      0,
+      16
+    ],
+    "births_clone_sexual": [
+      [
+        32,
+        12
+      ],
+      [
+        30,
+        11
+      ],
+      [
+        34,
+        10
+      ]
+    ],
+    "all_events_verified": true
+  }
+}

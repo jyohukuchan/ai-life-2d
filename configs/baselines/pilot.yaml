@@ -1,0 +1,13 @@
+worlds: 3
+initial: 32
+capacity: 128
+hidden: 64
+mode: L3
+seed: 42
+ticks: 9000
+radius: 5
+symbols: 4
+obstacle_density: 0.04
+publish_seconds: 0.5
+replay_count: 3
+replay_length: 256

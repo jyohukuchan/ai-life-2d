@@ -1,0 +1,445 @@
+{
+  "last_survivors": {
+    "L3": [
+      {
+        "world": 0,
+        "last_death": {
+          "tick": 3092,
+          "world": 0,
+          "event": "death",
+          "id": 80,
+          "cause": "energy"
+        },
+        "last_survivor_birth": {
+          "tick": 1561,
+          "world": 0,
+          "event": "birth",
+          "id": 80,
+          "parents": [
+            76,
+            78
+          ],
+          "generation": 4
+        },
+        "lifetime_ticks": 1531,
+        "latest_birth_tick": 1561,
+        "lineage_via_first_parent": [
+          {
+            "id": 80,
+            "birth_tick": 1561,
+            "generation": 4,
+            "parents": [
+              76,
+              78
+            ]
+          },
+          {
+            "id": 76,
+            "birth_tick": 1087,
+            "generation": 3,
+            "parents": [
+              70,
+              71
+            ]
+          },
+          {
+            "id": 70,
+            "birth_tick": 639,
+            "generation": 2,
+            "parents": [
+              40,
+              62
+            ]
+          },
+          {
+            "id": 40,
+            "birth_tick": 300,
+            "generation": 1,
+            "parents": [
+              32,
+              0
+            ]
+          },
+          {
+            "id": 32,
+            "birth_tick": 0,
+            "generation": 0,
+            "parents": []
+          }
+        ],
+        "last_survivor_successful_movements": 552,
+        "last_survivor_had_offspring": false
+      },
+      {
+        "world": 1,
+        "last_death": {
+          "tick": 2843,
+          "world": 1,
+          "event": "death",
+          "id": 76,
+          "cause": "energy"
+        },
+        "last_survivor_birth": {
+          "tick": 1014,
+          "world": 1,
+          "event": "birth",
+          "id": 76,
+          "parents": [
+            65,
+            66
+          ],
+          "generation": 3
+        },
+        "lifetime_ticks": 1829,
+        "latest_birth_tick": 1014,
+        "lineage_via_first_parent": [
+          {
+            "id": 76,
+            "birth_tick": 1014,
+            "generation": 3,
+            "parents": [
+              65,
+              66
+            ]
+          },
+          {
+            "id": 65,
+            "birth_tick": 607,
+            "generation": 2,
+            "parents": [
+              44,
+              50
+            ]
+          },
+          {
+            "id": 44,
+            "birth_tick": 300,
+            "generation": 1,
+            "parents": [
+              14,
+              0
+            ]
+          },
+          {
+            "id": 14,
+            "birth_tick": 0,
+            "generation": 0,
+            "parents": []
+          }
+        ],
+        "last_survivor_successful_movements": 75,
+        "last_survivor_had_offspring": false
+      },
+      {
+        "world": 2,
+        "last_death": {
+          "tick": 3102,
+          "world": 2,
+          "event": "death",
+          "id": 80,
+          "cause": "energy"
+        },
+        "last_survivor_birth": {
+          "tick": 1545,
+          "world": 2,
+          "event": "birth",
+          "id": 80,
+          "parents": [
+            77,
+            78
+          ],
+          "generation": 4
+        },
+        "lifetime_ticks": 1557,
+        "latest_birth_tick": 1545,
+        "lineage_via_first_parent": [
+          {
+            "id": 80,
+            "birth_tick": 1545,
+            "generation": 4,
+            "parents": [
+              77,
+              78
+            ]
+          },
+          {
+            "id": 77,
+            "birth_tick": 1115,
+            "generation": 3,
+            "parents": [
+              65,
+              73
+            ]
+          },
+          {
+            "id": 65,
+            "birth_tick": 609,
+            "generation": 2,
+            "parents": [
+              48,
+              63
+            ]
+          },
+          {
+            "id": 48,
+            "birth_tick": 303,
+            "generation": 1,
+            "parents": [
+              14,
+              0
+            ]
+          },
+          {
+            "id": 14,
+            "birth_tick": 0,
+            "generation": 0,
+            "parents": []
+          }
+        ],
+        "last_survivor_successful_movements": 510,
+        "last_survivor_had_offspring": false
+      }
+    ],
+    "RANDOM": [
+      {
+        "world": 0,
+        "last_death": {
+          "tick": 2608,
+          "world": 0,
+          "event": "death",
+          "id": 73,
+          "cause": "energy"
+        },
+        "last_survivor_birth": {
+          "tick": 954,
+          "world": 0,
+          "event": "birth",
+          "id": 73,
+          "parents": [
+            68,
+            69
+          ],
+          "generation": 3
+        },
+        "lifetime_ticks": 1654,
+        "latest_birth_tick": 954,
+        "lineage_via_first_parent": [
+          {
+            "id": 73,
+            "birth_tick": 954,
+            "generation": 3,
+            "parents": [
+              68,
+              69
+            ]
+          },
+          {
+            "id": 68,
+            "birth_tick": 633,
+            "generation": 2,
+            "parents": [
+              43,
+              51
+            ]
+          },
+          {
+            "id": 43,
+            "birth_tick": 301,
+            "generation": 1,
+            "parents": [
+              15,
+              0
+            ]
+          },
+          {
+            "id": 15,
+            "birth_tick": 0,
+            "generation": 0,
+            "parents": []
+          }
+        ],
+        "last_survivor_had_offspring": false
+      },
+      {
+        "world": 1,
+        "last_death": {
+          "tick": 2800,
+          "world": 1,
+          "event": "death",
+          "id": 77,
+          "cause": "energy"
+        },
+        "last_survivor_birth": {
+          "tick": 1172,
+          "world": 1,
+          "event": "birth",
+          "id": 77,
+          "parents": [
+            66,
+            72
+          ],
+          "generation": 3
+        },
+        "lifetime_ticks": 1628,
+        "latest_birth_tick": 1172,
+        "lineage_via_first_parent": [
+          {
+            "id": 77,
+            "birth_tick": 1172,
+            "generation": 3,
+            "parents": [
+              66,
+              72
+            ]
+          },
+          {
+            "id": 66,
+            "birth_tick": 622,
+            "generation": 2,
+            "parents": [
+              53,
+              54
+            ]
+          },
+          {
+            "id": 53,
+            "birth_tick": 303,
+            "generation": 1,
+            "parents": [
+              14,
+              0
+            ]
+          },
+          {
+            "id": 14,
+            "birth_tick": 0,
+            "generation": 0,
+            "parents": []
+          }
+        ],
+        "last_survivor_had_offspring": false
+      },
+      {
+        "world": 2,
+        "last_death": {
+          "tick": 2738,
+          "world": 2,
+          "event": "death",
+          "id": 77,
+          "cause": "energy"
+        },
+        "last_survivor_birth": {
+          "tick": 1099,
+          "world": 2,
+          "event": "birth",
+          "id": 77,
+          "parents": [
+            71,
+            75
+          ],
+          "generation": 3
+        },
+        "lifetime_ticks": 1639,
+        "latest_birth_tick": 1099,
+        "lineage_via_first_parent": [
+          {
+            "id": 77,
+            "birth_tick": 1099,
+            "generation": 3,
+            "parents": [
+              71,
+              75
+            ]
+          },
+          {
+            "id": 71,
+            "birth_tick": 645,
+            "generation": 2,
+            "parents": [
+              46,
+              59
+            ]
+          },
+          {
+            "id": 46,
+            "birth_tick": 301,
+            "generation": 1,
+            "parents": [
+              2,
+              0
+            ]
+          },
+          {
+            "id": 2,
+            "birth_tick": 0,
+            "generation": 0,
+            "parents": []
+          }
+        ],
+        "last_survivor_had_offspring": false
+      }
+    ]
+  },
+  "extinction_time_decomposition": [
+    {
+      "world": 0,
+      "extinction_delta_L3_minus_random": 484,
+      "last_survivor_birth_tick_delta": 607,
+      "last_survivor_lifetime_delta": -123
+    },
+    {
+      "world": 1,
+      "extinction_delta_L3_minus_random": 43,
+      "last_survivor_birth_tick_delta": -158,
+      "last_survivor_lifetime_delta": 201
+    },
+    {
+      "world": 2,
+      "extinction_delta_L3_minus_random": 364,
+      "last_survivor_birth_tick_delta": 446,
+      "last_survivor_lifetime_delta": -82
+    }
+  ],
+  "RANDOM_movement_replay": {
+    "mode": "RANDOM",
+    "replay_through_tick": 2800,
+    "matched_final_world_except_clock": true,
+    "active_transitions": [
+      65434,
+      63328,
+      63498
+    ],
+    "successful_movements": [
+      14373,
+      13746,
+      13475
+    ],
+    "successful_movement_fraction": [
+      0.21965645253658295,
+      0.217060387134552,
+      0.21221141517162323
+    ]
+  },
+  "L3_active_transitions": [
+    61976,
+    65189,
+    61582
+  ],
+  "L3_successful_movements": [
+    12920,
+    11776,
+    13550
+  ],
+  "L3_successful_movement_fraction": [
+    0.2084677939847683,
+    0.18064397367654053,
+    0.22003182748205644
+  ],
+  "birth_energy_accounting": {
+    "clone_parent_cost": 40,
+    "sexual_each_parent_cost": 20,
+    "child_energy": 30,
+    "population_net_birth_energy_change": -10
+  },
+  "scope": "descriptive decomposition of the observed trajectories, not an ablation proving a causal benefit of learning"
+}

@@ -1,0 +1,369 @@
+{
+  "condition": {
+    "height": 96,
+    "width": 32,
+    "radius": 5,
+    "metabolism": 0.016,
+    "regrowth": 1e-05,
+    "world_seeds": [
+      42,
+      1051,
+      2060
+    ],
+    "ticks": 10000
+  },
+  "groups": {
+    "absolute": {
+      "run": "compass-absolute-L3-10k",
+      "final": [
+        0,
+        0,
+        0
+      ],
+      "eaten": [
+        87,
+        64,
+        83
+      ],
+      "extinction_tick": [
+        7323,
+        4614,
+        4514
+      ],
+      "births_clone_sexual": [
+        [
+          48,
+          12
+        ],
+        [
+          41,
+          15
+        ],
+        [
+          46,
+          15
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          88,
+          4
+        ],
+        [
+          85,
+          3
+        ],
+        [
+          92,
+          1
+        ]
+      ],
+      "max_generation": [
+        4,
+        3,
+        3
+      ],
+      "population_at_ticks": {
+        "0": [
+          32,
+          32,
+          32
+        ],
+        "1000": [
+          25,
+          32,
+          32
+        ],
+        "2000": [
+          24,
+          24,
+          28
+        ],
+        "3000": [
+          14,
+          3,
+          8
+        ],
+        "5000": [
+          2,
+          0,
+          0
+        ],
+        "10000": [
+          0,
+          0,
+          0
+        ]
+      },
+      "eaten_at_2000": [
+        44,
+        47,
+        65
+      ],
+      "agent_decisions": [
+        100632,
+        88893,
+        98805
+      ],
+      "food_per_1000_decisions": [
+        0.8645361316479848,
+        0.7199667015400537,
+        0.840038459592126
+      ],
+      "parameters_per_agent": 65625,
+      "device_name": "AMD Radeon Pro V620",
+      "elapsed_seconds": 230.58852203108836,
+      "all_events_verified": true
+    },
+    "masked": {
+      "run": "compass-masked-L3-10k",
+      "final": [
+        0,
+        0,
+        0
+      ],
+      "eaten": [
+        82,
+        85,
+        84
+      ],
+      "extinction_tick": [
+        6198,
+        4046,
+        4329
+      ],
+      "births_clone_sexual": [
+        [
+          46,
+          9
+        ],
+        [
+          44,
+          10
+        ],
+        [
+          48,
+          17
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          84,
+          3
+        ],
+        [
+          82,
+          4
+        ],
+        [
+          94,
+          3
+        ]
+      ],
+      "max_generation": [
+        4,
+        3,
+        4
+      ],
+      "population_at_ticks": {
+        "0": [
+          32,
+          32,
+          32
+        ],
+        "1000": [
+          31,
+          37,
+          37
+        ],
+        "2000": [
+          25,
+          27,
+          26
+        ],
+        "3000": [
+          10,
+          8,
+          7
+        ],
+        "5000": [
+          1,
+          0,
+          0
+        ],
+        "10000": [
+          0,
+          0,
+          0
+        ]
+      },
+      "eaten_at_2000": [
+        51,
+        72,
+        78
+      ],
+      "agent_decisions": [
+        99899,
+        102368,
+        95257
+      ],
+      "food_per_1000_decisions": [
+        0.820829037327701,
+        0.8303376055017193,
+        0.8818249577458874
+      ],
+      "parameters_per_agent": 65625,
+      "device_name": "AMD Radeon Pro V620",
+      "elapsed_seconds": 223.46011699200608,
+      "all_events_verified": true
+    },
+    "RANDOM": {
+      "run": "compass-RANDOM-10k",
+      "final": [
+        0,
+        0,
+        0
+      ],
+      "eaten": [
+        88,
+        81,
+        84
+      ],
+      "extinction_tick": [
+        5241,
+        5517,
+        5763
+      ],
+      "births_clone_sexual": [
+        [
+          46,
+          11
+        ],
+        [
+          43,
+          10
+        ],
+        [
+          47,
+          12
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          85,
+          4
+        ],
+        [
+          83,
+          2
+        ],
+        [
+          89,
+          2
+        ]
+      ],
+      "max_generation": [
+        4,
+        4,
+        4
+      ],
+      "population_at_ticks": {
+        "0": [
+          32,
+          32,
+          32
+        ],
+        "1000": [
+          27,
+          32,
+          30
+        ],
+        "2000": [
+          18,
+          23,
+          21
+        ],
+        "3000": [
+          15,
+          10,
+          12
+        ],
+        "5000": [
+          1,
+          1,
+          2
+        ],
+        "10000": [
+          0,
+          0,
+          0
+        ]
+      },
+      "eaten_at_2000": [
+        44,
+        57,
+        61
+      ],
+      "agent_decisions": [
+        100858,
+        100964,
+        100527
+      ],
+      "food_per_1000_decisions": [
+        0.8725138313272125,
+        0.8022661542728101,
+        0.8355964069354501
+      ],
+      "parameters_per_agent": 0,
+      "device_name": "AMD Radeon AI PRO R9700",
+      "elapsed_seconds": 61.15979348192923,
+      "all_events_verified": true
+    }
+  },
+  "config_differences": [
+    "compass"
+  ],
+  "random_reference_exactly_reproduced": true,
+  "initialization": {
+    "initial_world_digest": "d078bc22c32fbca51ca5c15db18c532a9aee96877d3613e6556910b726f063ca",
+    "initial_learner_digest": "21d0e4c337eb5809a46a7e646525f9c63ed35c0f5c2776984c1387413d841f0f",
+    "clock": 0,
+    "pretraining": false,
+    "all_history_and_optimizer_counts_zero": true,
+    "parameters_per_agent": 65625,
+    "observation_size": 372,
+    "prediction_target_size": 368,
+    "compass_order": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "extra_encoder_parameters": 128,
+    "note": "Both L3 trials load identical world/genome/weights/state tensors. Per-individual states remain private; matching copies are across experimental conditions only. Compass is policy input, not reward or prediction target."
+  },
+  "learning_check": {
+    "initial_learner_digest": "21d0e4c337eb5809a46a7e646525f9c63ed35c0f5c2776984c1387413d841f0f",
+    "initial_states_equal": true,
+    "pretraining": false,
+    "same_gpu_model": "AMD Radeon Pro V620",
+    "checks": {
+      "absolute": {
+        "occupied_slots": 198,
+        "private_optimizer_counts_equal_age": true,
+        "compass_encoder_changed_elements": 25344,
+        "compass_encoder_rms_change": 0.006522008217871189,
+        "actor_median_rms_change": 0.0007619677926413715,
+        "parameters_per_agent": 65625
+      },
+      "masked": {
+        "occupied_slots": 197,
+        "private_optimizer_counts_equal_age": true,
+        "compass_encoder_changed_elements": 0,
+        "compass_encoder_rms_change": 0.0,
+        "actor_median_rms_change": 0.0007789189112372696,
+        "parameters_per_agent": 65625
+      }
+    }
+  }
+}

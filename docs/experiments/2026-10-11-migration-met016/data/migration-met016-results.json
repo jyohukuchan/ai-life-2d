@@ -1,0 +1,213 @@
+{
+  "condition": {
+    "metabolism": 0.016,
+    "height": 28,
+    "width": 112,
+    "world_seeds": [
+      42,
+      1051,
+      2060
+    ],
+    "initial": 32,
+    "capacity": 128,
+    "horizon": 10000
+  },
+  "groups": {
+    "L3": {
+      "final": [
+        0,
+        0,
+        0
+      ],
+      "extinction_tick": [
+        3092,
+        2843,
+        3102
+      ],
+      "eaten": [
+        0,
+        0,
+        0
+      ],
+      "births_clone_sexual": [
+        [
+          32,
+          16
+        ],
+        [
+          32,
+          12
+        ],
+        [
+          28,
+          20
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          80,
+          0
+        ],
+        [
+          76,
+          0
+        ],
+        [
+          80,
+          0
+        ]
+      ],
+      "max_generation": [
+        4,
+        3,
+        4
+      ],
+      "elapsed_seconds": 229.24551596108358,
+      "parameters_per_agent": 65497,
+      "device_name": "AMD Radeon AI PRO R9700",
+      "every_metric_matches_event_accounting": true,
+      "population_at_ticks": {
+        "0": [
+          32,
+          32,
+          32
+        ],
+        "1000": [
+          21,
+          21,
+          22
+        ],
+        "2000": [
+          9,
+          14,
+          9
+        ],
+        "3000": [
+          1,
+          0,
+          1
+        ],
+        "4000": [
+          0,
+          0,
+          0
+        ],
+        "5000": [
+          0,
+          0,
+          0
+        ],
+        "10000": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "RANDOM": {
+      "final": [
+        0,
+        0,
+        0
+      ],
+      "extinction_tick": [
+        2608,
+        2800,
+        2738
+      ],
+      "eaten": [
+        0,
+        0,
+        0
+      ],
+      "births_clone_sexual": [
+        [
+          28,
+          13
+        ],
+        [
+          30,
+          15
+        ],
+        [
+          32,
+          13
+        ]
+      ],
+      "deaths_energy_age": [
+        [
+          73,
+          0
+        ],
+        [
+          77,
+          0
+        ],
+        [
+          77,
+          0
+        ]
+      ],
+      "max_generation": [
+        3,
+        3,
+        3
+      ],
+      "elapsed_seconds": 62.56359693792183,
+      "parameters_per_agent": 0,
+      "device_name": "AMD Radeon Pro V620",
+      "every_metric_matches_event_accounting": true,
+      "population_at_ticks": {
+        "0": [
+          32,
+          32,
+          32
+        ],
+        "1000": [
+          25,
+          21,
+          21
+        ],
+        "2000": [
+          8,
+          9,
+          9
+        ],
+        "3000": [
+          0,
+          0,
+          0
+        ],
+        "4000": [
+          0,
+          0,
+          0
+        ],
+        "5000": [
+          0,
+          0,
+          0
+        ],
+        "10000": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "random_screen_first_three_exactly_reproduced": true,
+  "between_group_config_differences": [
+    "mode",
+    "log_reward_components"
+  ],
+  "same_source_hash": "78cdbe1f8c0269fa5d6e75fda2018ede513cb96cdc3dad1289b5c0d7dc03a0b4",
+  "identical_initial_world_digest": "aed005117ef8e1b6cb26810659691c4b0df5cf5b3a02cf3dff5fa10036bc3e9b",
+  "evaluator_diagnostic": {
+    "active_transitions": 188747,
+    "covered_through_tick": 10000,
+    "last_active_tick": 3102,
+    "action_to_energy_rms_ratio": 244.44068945311903,
+    "action_to_energy_within_individual_rms_ratio": 194.90653595995013
+  }
+}

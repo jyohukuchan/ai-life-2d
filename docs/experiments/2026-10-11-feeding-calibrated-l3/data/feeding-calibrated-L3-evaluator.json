@@ -1,0 +1,905 @@
+{
+  "run": "feeding-calibrated-L3-10k",
+  "first_tick": 1,
+  "last_tick": 4939,
+  "covered_through_tick": 10000,
+  "log_files": 10,
+  "amplitudes": "RMS includes constant offsets; within_individual_rms removes each world/ID mean. Neither measures policy influence or causal learning benefit.",
+  "weighting": "one equally weighted old-live-agent transition, not one vote per individual or lineage",
+  "group_removal": "hold observed phi, other terms and current normalization scale fixed; effects do not add and do not simulate retraining",
+  "event_conditioning": "descriptive, not causal; actions, observations and lineages are confounded",
+  "summaries": [
+    {
+      "world": null,
+      "active_transitions": 303824,
+      "components": {
+        "energy": {
+          "pre_tanh": {
+            "mean": -1.5526804941833573e-07,
+            "mean_abs": 4.3645840113423786e-06,
+            "rms": 0.00010099808516513369,
+            "std": 0.00010099796581543821,
+            "within_individual_rms": 0.00010090009628512278
+          },
+          "group_removal": {
+            "mean": -1.5513622909475962e-07,
+            "mean_abs": 4.361948831350807e-06,
+            "rms": 0.0001009438686345266,
+            "std": 0.00010094374942340406,
+            "within_individual_rms": 0.00010084591832372918
+          },
+          "group_removal_fixed_scale": {
+            "mean": -8.224287469448493e-07,
+            "mean_abs": 2.1113722294688743e-05,
+            "rms": 0.000579713525641162,
+            "std": 0.0005797129422587204,
+            "within_individual_rms": 0.0005789761543712463
+          }
+        },
+        "visual": {
+          "pre_tanh": {
+            "mean": -2.6680474490078126e-08,
+            "mean_abs": 2.903655849600278e-05,
+            "rms": 0.00010188519238542357,
+            "std": 0.00010188518889204188,
+            "within_individual_rms": 0.00010188280676182417
+          },
+          "group_removal": {
+            "mean": -2.6595291250512076e-08,
+            "mean_abs": 2.9017454798577596e-05,
+            "rms": 0.00010181844547764492,
+            "std": 0.00010181844200425891,
+            "within_individual_rms": 0.00010181606134006337
+          },
+          "group_removal_fixed_scale": {
+            "mean": -1.0706356864330471e-06,
+            "mean_abs": 0.00016398799828013603,
+            "rms": 0.0009835138352975743,
+            "std": 0.0009835132525599086,
+            "within_individual_rms": 0.0009830928573520037
+          }
+        },
+        "received_sound": {
+          "pre_tanh": {
+            "mean": -0.0002479534613287516,
+            "mean_abs": 0.002156433115869181,
+            "rms": 0.0034858492913342745,
+            "std": 0.003477019465420168,
+            "within_individual_rms": 0.0027050855350380086
+          },
+          "group_removal": {
+            "mean": -0.0002477625687055068,
+            "mean_abs": 0.002155211055566365,
+            "rms": 0.003483824545929652,
+            "std": 0.0034750031908431962,
+            "within_individual_rms": 0.0027034608415375397
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.000989829828391684,
+            "mean_abs": 0.013247763567066325,
+            "rms": 0.03861229692524543,
+            "std": 0.038599607650261734,
+            "within_individual_rms": 0.034678628424471156
+          }
+        },
+        "movement": {
+          "pre_tanh": {
+            "mean": -0.00021512770836309766,
+            "mean_abs": 0.0089882195196259,
+            "rms": 0.01155767802972551,
+            "std": 0.011555675727013725,
+            "within_individual_rms": 0.009765683906364994
+          },
+          "group_removal": {
+            "mean": -0.00021479404553025177,
+            "mean_abs": 0.008983465114777024,
+            "rms": 0.011551227323248757,
+            "std": 0.011549230112495524,
+            "within_individual_rms": 0.009760084985647299
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.0011860410281718816,
+            "mean_abs": 0.047125694133599544,
+            "rms": 0.09393776348397251,
+            "std": 0.09393027581696038,
+            "within_individual_rms": 0.08686060145639894
+          }
+        },
+        "mouth": {
+          "pre_tanh": {
+            "mean": -0.0016559881255245707,
+            "mean_abs": 0.009637200071144252,
+            "rms": 0.012265433314853295,
+            "std": 0.012153129544657817,
+            "within_individual_rms": 0.007868255902005418
+          },
+          "group_removal": {
+            "mean": -0.0016540721111699133,
+            "mean_abs": 0.009631758081698128,
+            "rms": 0.012257502112215097,
+            "std": 0.012145386098515249,
+            "within_individual_rms": 0.007864264086493824
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.004130439173299375,
+            "mean_abs": 0.04542384010716793,
+            "rms": 0.08230581811966392,
+            "std": 0.0822021117039147,
+            "within_individual_rms": 0.07210686970916051
+          }
+        },
+        "sent_sound": {
+          "pre_tanh": {
+            "mean": 6.0635314404223e-05,
+            "mean_abs": 0.009134470761562341,
+            "rms": 0.01119564224743854,
+            "std": 0.011195478046572099,
+            "within_individual_rms": 0.00981772925497906
+          },
+          "group_removal": {
+            "mean": 6.097033641442818e-05,
+            "mean_abs": 0.009129428133975895,
+            "rms": 0.01118891795485535,
+            "std": 0.011188751834702651,
+            "within_individual_rms": 0.009811992884094765
+          },
+          "group_removal_fixed_scale": {
+            "mean": 3.1640246097029144e-05,
+            "mean_abs": 0.04801934700223641,
+            "rms": 0.09073587239336618,
+            "std": 0.09073586687677622,
+            "within_individual_rms": 0.08559221597589772
+          }
+        },
+        "reproduction": {
+          "pre_tanh": {
+            "mean": -0.0008925815993134835,
+            "mean_abs": 0.009247890937331327,
+            "rms": 0.011710840036902502,
+            "std": 0.011676774916837508,
+            "within_individual_rms": 0.009442184952308558
+          },
+          "group_removal": {
+            "mean": -0.0008913646967726684,
+            "mean_abs": 0.009242518322405547,
+            "rms": 0.011702945931056091,
+            "std": 0.01166895078584916,
+            "within_individual_rms": 0.009435988741447507
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.0005542470041865085,
+            "mean_abs": 0.046649047593037646,
+            "rms": 0.08911632952562643,
+            "std": 0.08911460597667693,
+            "within_individual_rms": 0.08166543399405225
+          }
+        },
+        "all_action": {
+          "pre_tanh": {
+            "mean": -0.002703062118796929,
+            "mean_abs": 0.019069542676926465,
+            "rms": 0.02400706633069476,
+            "std": 0.023854406070751438,
+            "within_individual_rms": 0.018522634499332294
+          },
+          "group_removal": {
+            "mean": -0.002700877169865813,
+            "mean_abs": 0.019061821051362244,
+            "rms": 0.02399252207775434,
+            "std": 0.023840016320565448,
+            "within_individual_rms": 0.01851177122497614
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.005841729399692867,
+            "mean_abs": 0.08910207928052714,
+            "rms": 0.15514666132818336,
+            "std": 0.15503664314897556,
+            "within_individual_rms": 0.1484622911131082
+          }
+        }
+      },
+      "events": {
+        "ate": {
+          "count": 261,
+          "mean_raw_reward": -0.00693654827773571
+        },
+        "moved": {
+          "count": 74382,
+          "mean_raw_reward": -0.004451633896678686
+        },
+        "birth_parent": {
+          "count": 198,
+          "mean_raw_reward": -0.0016746901674196124
+        },
+        "terminal": {
+          "count": 264,
+          "mean_raw_reward": -0.0005178252467885613
+        }
+      },
+      "positive_energy_coefficient_transition_fraction": 0.4884209279056296,
+      "raw_reward": {
+        "mean": -0.002949002431705594,
+        "mean_abs": 0.019376175478100777,
+        "rms": 0.024334920570254326,
+        "std": 0.024155573919415474,
+        "within_individual_rms": 0.0186982182753213
+      },
+      "scaled_reward": {
+        "mean": -0.006834127940237522,
+        "mean_abs": 0.0904119610786438,
+        "rms": 0.15640728175640106,
+        "std": 0.15625791251659393,
+        "within_individual_rms": 0.1499707204953692
+      }
+    },
+    {
+      "world": 0,
+      "active_transitions": 101108,
+      "components": {
+        "energy": {
+          "pre_tanh": {
+            "mean": 4.9294934739814535e-08,
+            "mean_abs": 5.758672768737367e-06,
+            "rms": 0.00012353170265568043,
+            "std": 0.00012353169282018625,
+            "within_individual_rms": 0.0001234229867251594
+          },
+          "group_removal": {
+            "mean": 4.928556389234259e-08,
+            "mean_abs": 5.755016407959226e-06,
+            "rms": 0.00012345907989707176,
+            "std": 0.00012345907005953323,
+            "within_individual_rms": 0.00012335039996775763
+          },
+          "group_removal_fixed_scale": {
+            "mean": -7.020655603852699e-07,
+            "mean_abs": 2.2512629250744742e-05,
+            "rms": 0.0005736408222525265,
+            "std": 0.0005736403926315716,
+            "within_individual_rms": 0.0005727331749735249
+          }
+        },
+        "visual": {
+          "pre_tanh": {
+            "mean": -8.225504076725089e-08,
+            "mean_abs": 3.636729225674554e-05,
+            "rms": 0.0001246544287931817,
+            "std": 0.0001246544016545853,
+            "within_individual_rms": 0.00012465233502298892
+          },
+          "group_removal": {
+            "mean": -8.17307243837791e-08,
+            "mean_abs": 3.634103862572754e-05,
+            "rms": 0.00012456393364903735,
+            "std": 0.0001245639068358506,
+            "within_individual_rms": 0.00012456184464784304
+          },
+          "group_removal_fixed_scale": {
+            "mean": -5.063520021949038e-06,
+            "mean_abs": 0.00018916096969857365,
+            "rms": 0.0011229864111036224,
+            "std": 0.0011229749953976628,
+            "within_individual_rms": 0.0011226135069062307
+          }
+        },
+        "received_sound": {
+          "pre_tanh": {
+            "mean": -0.00018903577337352166,
+            "mean_abs": 0.0024391345903947786,
+            "rms": 0.00392589112831566,
+            "std": 0.003921337351946741,
+            "within_individual_rms": 0.003003500483986497
+          },
+          "group_removal": {
+            "mean": -0.00018879892398422296,
+            "mean_abs": 0.002437655896176778,
+            "rms": 0.00392347975846834,
+            "std": 0.003918934597746329,
+            "within_individual_rms": 0.0030015869650790346
+          },
+          "group_removal_fixed_scale": {
+            "mean": 0.00032225575676017587,
+            "mean_abs": 0.013932164014948671,
+            "rms": 0.04395651028347657,
+            "std": 0.043955329000345524,
+            "within_individual_rms": 0.03871927506575014
+          }
+        },
+        "movement": {
+          "pre_tanh": {
+            "mean": -0.0022711983160128056,
+            "mean_abs": 0.009382080329608765,
+            "rms": 0.011962596792827051,
+            "std": 0.011745015122897742,
+            "within_individual_rms": 0.00952742019823533
+          },
+          "group_removal": {
+            "mean": -0.0022704272677374765,
+            "mean_abs": 0.009376879317840967,
+            "rms": 0.01195535551667309,
+            "std": 0.011737788784603334,
+            "within_individual_rms": 0.009521590333831527
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.011508723870974921,
+            "mean_abs": 0.04297355009484612,
+            "rms": 0.08467177870541638,
+            "std": 0.08388599039172545,
+            "within_individual_rms": 0.07744644143143833
+          }
+        },
+        "mouth": {
+          "pre_tanh": {
+            "mean": -0.0006163936888002268,
+            "mean_abs": 0.008971843721320327,
+            "rms": 0.011444512732844768,
+            "std": 0.011427901404573513,
+            "within_individual_rms": 0.00707175071479667
+          },
+          "group_removal": {
+            "mean": -0.0006160181794195117,
+            "mean_abs": 0.008967129946344039,
+            "rms": 0.011438258504533148,
+            "std": 0.01142165833927585,
+            "within_individual_rms": 0.0070679773346265145
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.004139208152430805,
+            "mean_abs": 0.04093794005663036,
+            "rms": 0.08313552167926581,
+            "std": 0.0830324148796994,
+            "within_individual_rms": 0.07324739997360849
+          }
+        },
+        "sent_sound": {
+          "pre_tanh": {
+            "mean": 0.001440531558743329,
+            "mean_abs": 0.009462543492508387,
+            "rms": 0.011632041209729039,
+            "std": 0.011542497629763632,
+            "within_individual_rms": 0.009796310023467312
+          },
+          "group_removal": {
+            "mean": 0.001440368495495176,
+            "mean_abs": 0.009457039600359428,
+            "rms": 0.01162432625528481,
+            "std": 0.011534743147833365,
+            "within_individual_rms": 0.009790194560311464
+          },
+          "group_removal_fixed_scale": {
+            "mean": 0.009660956742470793,
+            "mean_abs": 0.043373008070010925,
+            "rms": 0.08505637676893635,
+            "std": 0.0845059355541335,
+            "within_individual_rms": 0.07962773042676315
+          }
+        },
+        "reproduction": {
+          "pre_tanh": {
+            "mean": -0.001240142208208856,
+            "mean_abs": 0.008438808385585098,
+            "rms": 0.010983637877488616,
+            "std": 0.010913402234281548,
+            "within_individual_rms": 0.008122805453220307
+          },
+          "group_removal": {
+            "mean": -0.0012396612870064056,
+            "mean_abs": 0.008434082722954879,
+            "rms": 0.010977404754966159,
+            "std": 0.010907183644179246,
+            "within_individual_rms": 0.008117872090417574
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.0015634393005796868,
+            "mean_abs": 0.03872394257780703,
+            "rms": 0.0790291021585576,
+            "std": 0.07901363582028824,
+            "within_individual_rms": 0.07243277314039821
+          }
+        },
+        "all_action": {
+          "pre_tanh": {
+            "mean": -0.0026872026542785594,
+            "mean_abs": 0.020041172474774566,
+            "rms": 0.02474470704485545,
+            "std": 0.024598363129089654,
+            "within_individual_rms": 0.017438168534918863
+          },
+          "group_removal": {
+            "mean": -0.002686234753422966,
+            "mean_abs": 0.02003327715383098,
+            "rms": 0.024730840101185793,
+            "std": 0.024584519416899774,
+            "within_individual_rms": 0.0174277184491831
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.007551256283905554,
+            "mean_abs": 0.08262109694864844,
+            "rms": 0.1493309301005138,
+            "std": 0.14913988471639406,
+            "within_individual_rms": 0.14023948079879592
+          }
+        }
+      },
+      "events": {
+        "ate": {
+          "count": 89,
+          "mean_raw_reward": -0.004272462334483862
+        },
+        "moved": {
+          "count": 24333,
+          "mean_raw_reward": -0.00894364807754755
+        },
+        "birth_parent": {
+          "count": 69,
+          "mean_raw_reward": -0.0017086014850065112
+        },
+        "terminal": {
+          "count": 91,
+          "mean_raw_reward": 0.0005071727791801095
+        }
+      },
+      "positive_energy_coefficient_transition_fraction": 0.45791628753412195,
+      "raw_reward": {
+        "mean": -0.0028752877842634916,
+        "mean_abs": 0.020206522196531296,
+        "rms": 0.02489480748772621,
+        "std": 0.024728205054998398,
+        "within_individual_rms": 0.017663023189863854
+      },
+      "scaled_reward": {
+        "mean": -0.007235556375235319,
+        "mean_abs": 0.08334910869598389,
+        "rms": 0.14852452278137207,
+        "std": 0.14834816753864288,
+        "within_individual_rms": 0.14063636990625633
+      }
+    },
+    {
+      "world": 1,
+      "active_transitions": 102255,
+      "components": {
+        "energy": {
+          "pre_tanh": {
+            "mean": -6.021258945046092e-07,
+            "mean_abs": 3.6369799238379225e-06,
+            "rms": 9.031324499136761e-05,
+            "std": 9.031123775742393e-05,
+            "within_individual_rms": 9.022148109356611e-05
+          },
+          "group_removal": {
+            "mean": -6.018266685152291e-07,
+            "mean_abs": 3.6346133782813318e-06,
+            "rms": 9.026483250748518e-05,
+            "std": 9.026282619254404e-05,
+            "within_individual_rms": 9.017311740532952e-05
+          },
+          "group_removal_fixed_scale": {
+            "mean": -2.58539576161377e-06,
+            "mean_abs": 2.2457812772504463e-05,
+            "rms": 0.0007082191499426363,
+            "std": 0.0007082144308570858,
+            "within_individual_rms": 0.0007074636435730671
+          }
+        },
+        "visual": {
+          "pre_tanh": {
+            "mean": 4.057672999383048e-08,
+            "mean_abs": 2.486495918282163e-05,
+            "rms": 9.180877467440409e-05,
+            "std": 9.180876570755369e-05,
+            "within_individual_rms": 9.180663989711856e-05
+          },
+          "group_removal": {
+            "mean": 4.051475647361552e-08,
+            "mean_abs": 2.484766661890481e-05,
+            "rms": 9.175179174998786e-05,
+            "std": 9.175178280495508e-05,
+            "within_individual_rms": 9.17496559906826e-05
+          },
+          "group_removal_fixed_scale": {
+            "mean": 1.0224390294883426e-06,
+            "mean_abs": 0.00015701751697142502,
+            "rms": 0.0010643962150012605,
+            "std": 0.001064395723933275,
+            "within_individual_rms": 0.0010637988845363813
+          }
+        },
+        "received_sound": {
+          "pre_tanh": {
+            "mean": -0.0005770159025762359,
+            "mean_abs": 0.002010963166767264,
+            "rms": 0.0032747661650579735,
+            "std": 0.003223530065624119,
+            "within_individual_rms": 0.00248496488211687
+          },
+          "group_removal": {
+            "mean": -0.0005767180327015702,
+            "mean_abs": 0.0020099296887979303,
+            "rms": 0.003273088876102339,
+            "std": 0.0032218794362330974,
+            "within_individual_rms": 0.002483619836932852
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.003728589803632067,
+            "mean_abs": 0.014030302534554825,
+            "rms": 0.038007513249020505,
+            "std": 0.03782418117356569,
+            "within_individual_rms": 0.034067663830174635
+          }
+        },
+        "movement": {
+          "pre_tanh": {
+            "mean": -0.00014463692547972645,
+            "mean_abs": 0.008139814919177538,
+            "rms": 0.010597483154634999,
+            "std": 0.01059649608939485,
+            "within_individual_rms": 0.009253511567574221
+          },
+          "group_removal": {
+            "mean": -0.00014394917321100791,
+            "mean_abs": 0.00813562737344271,
+            "rms": 0.010592093469345943,
+            "std": 0.01059111527172152,
+            "within_individual_rms": 0.009248707448127759
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.00126849740681337,
+            "mean_abs": 0.04860131181050627,
+            "rms": 0.10076442088819189,
+            "std": 0.10075643617785213,
+            "within_individual_rms": 0.09316665842637552
+          }
+        },
+        "mouth": {
+          "pre_tanh": {
+            "mean": -0.0031790848538667794,
+            "mean_abs": 0.008877526750827994,
+            "rms": 0.01131434604756812,
+            "std": 0.010858537929944121,
+            "within_individual_rms": 0.006030201291587582
+          },
+          "group_removal": {
+            "mean": -0.0031751387245051634,
+            "mean_abs": 0.008871703290118431,
+            "rms": 0.011304792540160058,
+            "std": 0.010849738635386855,
+            "within_individual_rms": 0.0060274020589165785
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.00464155816503241,
+            "mean_abs": 0.04219987855142308,
+            "rms": 0.07586126455495336,
+            "std": 0.0757191349506665,
+            "within_individual_rms": 0.06547741471082243
+          }
+        },
+        "sent_sound": {
+          "pre_tanh": {
+            "mean": -0.0005616359402665738,
+            "mean_abs": 0.008986095588980489,
+            "rms": 0.011056005295134555,
+            "std": 0.011041730759108564,
+            "within_individual_rms": 0.010023610601532043
+          },
+          "group_removal": {
+            "mean": -0.0005602821042340232,
+            "mean_abs": 0.008981221618774573,
+            "rms": 0.011049818266604082,
+            "std": 0.011035604545680873,
+            "within_individual_rms": 0.01001786697008509
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.004345251860214991,
+            "mean_abs": 0.05345012008439574,
+            "rms": 0.1002925588103228,
+            "std": 0.10019838391407995,
+            "within_individual_rms": 0.0953217754430666
+          }
+        },
+        "reproduction": {
+          "pre_tanh": {
+            "mean": -0.0017770487904901437,
+            "mean_abs": 0.009939949209366986,
+            "rms": 0.01244535711367135,
+            "std": 0.012317833059553439,
+            "within_individual_rms": 0.010096036796668255
+          },
+          "group_removal": {
+            "mean": -0.0017735742347240824,
+            "mean_abs": 0.009933431348864272,
+            "rms": 0.012434680034206905,
+            "std": 0.012307546546205979,
+            "within_individual_rms": 0.010088200215330424
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.00016488355478777247,
+            "mean_abs": 0.051588231245974586,
+            "rms": 0.0960914013606286,
+            "std": 0.0960912598984048,
+            "within_individual_rms": 0.08647726244186439
+          }
+        },
+        "all_action": {
+          "pre_tanh": {
+            "mean": -0.005662406510103224,
+            "mean_abs": 0.018692426339950784,
+            "rms": 0.024213859071140393,
+            "std": 0.023542474883312254,
+            "within_individual_rms": 0.01799637688401106
+          },
+          "group_removal": {
+            "mean": -0.005657097460308025,
+            "mean_abs": 0.01868405886630318,
+            "rms": 0.02419677541338316,
+            "std": 0.023526180921056447,
+            "within_individual_rms": 0.017985308128383174
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.010426232107637549,
+            "mean_abs": 0.09294688856505602,
+            "rms": 0.16093175318211428,
+            "std": 0.1605936576154445,
+            "within_individual_rms": 0.15486581051008025
+          }
+        }
+      },
+      "events": {
+        "ate": {
+          "count": 86,
+          "mean_raw_reward": -0.012400263920426369
+        },
+        "moved": {
+          "count": 23331,
+          "mean_raw_reward": -0.008022921159863472
+        },
+        "birth_parent": {
+          "count": 62,
+          "mean_raw_reward": -0.003514742711558938
+        },
+        "terminal": {
+          "count": 84,
+          "mean_raw_reward": -0.005014910362660885
+        }
+      },
+      "positive_energy_coefficient_transition_fraction": 0.529284631558359,
+      "raw_reward": {
+        "mean": -0.006234657019376755,
+        "mean_abs": 0.018956052139401436,
+        "rms": 0.024480674415826797,
+        "std": 0.02367345429956913,
+        "within_individual_rms": 0.018150794084785878
+      },
+      "scaled_reward": {
+        "mean": -0.014157530851662159,
+        "mean_abs": 0.09394549578428268,
+        "rms": 0.16171668469905853,
+        "std": 0.1610957831144333,
+        "within_individual_rms": 0.15602950702253476
+      }
+    },
+    {
+      "world": 2,
+      "active_transitions": 100461,
+      "components": {
+        "energy": {
+          "pre_tanh": {
+            "mean": 9.368920510864123e-08,
+            "mean_abs": 3.7021142955827853e-06,
+            "rms": 8.47891191296177e-05,
+            "std": 8.478906736784731e-05,
+            "within_individual_rms": 8.469501706194843e-05
+          },
+          "group_removal": {
+            "mean": 9.379273077623678e-08,
+            "mean_abs": 3.7002334414770755e-06,
+            "rms": 8.47527813096249e-05,
+            "std": 8.475272941115676e-05,
+            "within_individual_rms": 8.465871461553259e-05
+          },
+          "group_removal_fixed_scale": {
+            "mean": 8.508823988560529e-07,
+            "mean_abs": 1.8337713133701336e-05,
+            "rms": 0.0004179171003992244,
+            "std": 0.0004179162341968049,
+            "within_individual_rms": 0.0004173807028614008
+          }
+        },
+        "visual": {
+          "pre_tanh": {
+            "mean": -3.920625262636676e-08,
+            "mean_abs": 2.5904706918655962e-05,
+            "rms": 8.471028944314997e-05,
+            "std": 8.471028037028329e-05,
+            "within_individual_rms": 8.470706768270567e-05
+          },
+          "group_removal": {
+            "mean": -3.9413246046823885e-08,
+            "mean_abs": 2.5890955726469666e-05,
+            "rms": 8.466438395362057e-05,
+            "std": 8.466437477972727e-05,
+            "within_individual_rms": 8.466116184570579e-05
+          },
+          "group_removal_fixed_scale": {
+            "mean": 8.175118963981909e-07,
+            "mean_abs": 0.00014574786302413485,
+            "rms": 0.000709232339408637,
+            "std": 0.0007092318682471533,
+            "within_individual_rms": 0.0007089735006801414
+          }
+        },
+        "received_sound": {
+          "pre_tanh": {
+            "mean": 2.7688134275354622e-05,
+            "mean_abs": 0.0020199786604992607,
+            "rms": 0.0032126624740148237,
+            "std": 0.0032125431575565485,
+            "within_individual_rms": 0.002601120463016325
+          },
+          "group_removal": {
+            "mean": 2.772388654018943e-05,
+            "mean_abs": 0.0020188229369379283,
+            "rms": 0.0032107242554074893,
+            "std": 0.003210604558393495,
+            "within_individual_rms": 0.0025995421956510945
+          },
+          "group_removal_fixed_scale": {
+            "mean": 0.00047730221214813806,
+            "mean_abs": 0.011762442073103247,
+            "rms": 0.03307518968405029,
+            "std": 0.03307174557283279,
+            "within_individual_rms": 0.03077131526100462
+          }
+        },
+        "movement": {
+          "pre_tanh": {
+            "mean": 0.0017824350472784702,
+            "mean_abs": 0.00945537725887894,
+            "rms": 0.012068469167684772,
+            "std": 0.011936116342998312,
+            "within_individual_rms": 0.010483801464279085
+          },
+          "group_removal": {
+            "mean": 0.0017819680951205862,
+            "mean_abs": 0.009450495355335565,
+            "rms": 0.012061827233429568,
+            "std": 0.011929470479324533,
+            "within_individual_rms": 0.010477676730094226
+          },
+          "group_removal_fixed_scale": {
+            "mean": 0.009287051951871269,
+            "mean_abs": 0.049802610488385836,
+            "rms": 0.0955879410239992,
+            "std": 0.09513571955501673,
+            "within_individual_rms": 0.08914035861294296
+          }
+        },
+        "mouth": {
+          "pre_tanh": {
+            "mean": -0.0011519821764666514,
+            "mean_abs": 0.011080080842656945,
+            "rms": 0.013887300061526704,
+            "std": 0.01383943785216664,
+            "within_individual_rms": 0.009994408425797664
+          },
+          "group_removal": {
+            "mean": -0.0011505821039514267,
+            "mean_abs": 0.011074294232267634,
+            "rms": 0.013879224575024916,
+            "std": 0.013831450958812753,
+            "within_individual_rms": 0.009989310428839404
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.003601367330079797,
+            "mean_abs": 0.053220164762431556,
+            "rms": 0.08759917373870285,
+            "std": 0.08752511292798931,
+            "within_individual_rms": 0.0772071823140913
+          }
+        },
+        "sent_sound": {
+          "pre_tanh": {
+            "mean": -0.000694764316559793,
+            "mean_abs": 0.008955309948827695,
+            "rms": 0.010884801720807009,
+            "std": 0.0108626060890432,
+            "within_individual_rms": 0.009625628362292757
+          },
+          "group_removal": {
+            "mean": -0.0006949650091408503,
+            "mean_abs": 0.008950559887281207,
+            "rms": 0.01087857891709992,
+            "std": 0.010856357717560744,
+            "within_individual_rms": 0.009620285529992655
+          },
+          "group_removal_fixed_scale": {
+            "mean": -0.005204638807310991,
+            "mean_abs": 0.04716785572943654,
+            "rms": 0.08590483200239352,
+            "std": 0.08574702266694095,
+            "within_individual_rms": 0.08078477130883148
+          }
+        },
+        "reproduction": {
+          "pre_tanh": {
+            "mean": 0.000357479127515462,
+            "mean_abs": 0.009357767407154955,
+            "rms": 0.01164875721488028,
+            "std": 0.011643270731397435,
+            "within_individual_rms": 0.009973753677480282
+          },
+          "group_removal": {
+            "mean": 0.0003571387816774225,
+            "mean_abs": 0.009352909370361684,
+            "rms": 0.011642281491682734,
+            "std": 0.011636802405394718,
+            "within_individual_rms": 0.00996813111834595
+          },
+          "group_removal_fixed_scale": {
+            "mean": 6.512822784834775e-05,
+            "mean_abs": 0.049597806747822784,
+            "rms": 0.09128996931066084,
+            "std": 0.09128994607871853,
+            "within_individual_rms": 0.08530897063183891
+          }
+        },
+        "all_action": {
+          "pre_tanh": {
+            "mean": 0.0002931676817674877,
+            "mean_abs": 0.018475506040188053,
+            "rms": 0.023021653494712423,
+            "std": 0.023019786757069925,
+            "within_individual_rms": 0.020047419300794636
+          },
+          "group_removal": {
+            "mean": 0.00029339762689576635,
+            "mean_abs": 0.0184686166100846,
+            "rms": 0.02300907440592336,
+            "std": 0.023007203716441712,
+            "within_individual_rms": 0.020036326589324617
+          },
+          "group_removal_fixed_scale": {
+            "mean": 0.0005451786403411762,
+            "mean_abs": 0.09171133250538148,
+            "rms": 0.154891750641789,
+            "std": 0.1548907911953718,
+            "within_individual_rms": 0.14984400938884482
+          }
+        }
+      },
+      "events": {
+        "ate": {
+          "count": 86,
+          "mean_raw_reward": -0.0042298538610339165
+        },
+        "moved": {
+          "count": 26718,
+          "mean_raw_reward": 0.0027579579036682844
+        },
+        "birth_parent": {
+          "count": 67,
+          "mean_raw_reward": 6.296909850789234e-05
+        },
+        "terminal": {
+          "count": 89,
+          "mean_raw_reward": 0.0026785831432789564
+        }
+      },
+      "positive_energy_coefficient_transition_fraction": 0.47752859318541524,
+      "raw_reward": {
+        "mean": 0.0003211372531950474,
+        "mean_abs": 0.018968110904097557,
+        "rms": 0.02360520511865616,
+        "std": 0.02360301837325096,
+        "within_individual_rms": 0.020199976020966702
+      },
+      "scaled_reward": {
+        "mean": 0.00102406763471663,
+        "mean_abs": 0.0939236655831337,
+        "rms": 0.1586291790008545,
+        "std": 0.15862587094306946,
+        "within_individual_rms": 0.15275541767923187
+      }
+    }
+  ]
+}

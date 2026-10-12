@@ -1,0 +1,1342 @@
+{
+  "purpose": "Separate GPU kernel execution, host launch gaps and CPU affinity in the current small independent-model workload.",
+  "date_jst": "2026-10-11",
+  "protocol": {
+    "sequential_gpu_processes": true,
+    "threads": 4,
+    "warmup_ticks": 32,
+    "measured_ticks": 160,
+    "repeats_per_process": 5,
+    "worlds": 3,
+    "initial_alive": 96,
+    "capacity_total": 384,
+    "initial_bank": "runs/compass-ablation-initial/absolute.pt",
+    "execution": "compiled",
+    "timing_includes": "observe, action, world step, next observe, L3 learning, inheritance check",
+    "timing_excludes": "initial compile, warmup, profiler, numerical check, observer/log/checkpoint I/O",
+    "governor": "powersave; CPU/GPU clocks were not forced",
+    "limitations": [
+      "One process per GPU/affinity/precision case plus an extra FP32 repetition on CPU16-19; fixed order, not randomized.",
+      "Profiler durations come from separate 12-tick traces and must not be subtracted from unprofiled wall times.",
+      "Kernel-free gaps in the trace include host work, launch/scheduling latency, dependency or synchronization waits, and profiler overhead; they do not isolate a single cause.",
+      "ROCBLAS_USE_HIPBLASLT=0 probe changes an environment variable, but does not independently prove which backend ran.",
+      "Affinity changes did not isolate a causal CPU-core effect: repeating the same CPU16-19 mask changed R9700 FP32 from 5.91 to 6.55 ms/tick.",
+      "Pinning the main thread to CPU16 leaves the autograd worker on CPU16-19; profiler perturbation was larger in this probe.",
+      "The ROCBLAS_USE_HIPBLASLT=0 probe showed no improvement versus the adjacent default repeat; neither backend choice nor backend-specific root cause is proved."
+    ]
+  },
+  "cases": {
+    "r9700-cpu16": {
+      "device": "AMD Radeon AI PRO R9700",
+      "arch": "gfx1201",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "visible_devices": "2",
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            5.863901349948719,
+            5.855650387820788,
+            5.9281365502101835,
+            5.908226806059247,
+            5.965318869129987
+          ],
+          "median_ms_per_tick": 5.908226806059247,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.49064600467681885,
+            "loss_candidate": 0.4906460642814636,
+            "loss_relative_difference": 1.2148197316851954e-07,
+            "features_relative_l2": 1.4222244715256238e-07,
+            "gradient_relative_l2": 3.0304605047604127e-07,
+            "gradient_cosine": 1.0000001192092896,
+            "update_relative_l2": 6.881419722049031e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/r9700-cpu16/fp32-compiled/fp32-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 187.0,
+            "kernel_sum_ms_per_tick": 3.2707454166666667,
+            "kernel_union_ms_per_tick": 3.2707454935709634,
+            "first_to_last_kernel_ms_per_tick": 10.749656504313151,
+            "kernel_free_gap_ms_per_tick": 7.478911010742188,
+            "median_kernel_free_gap_us": 30.3309326171875,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 113.0,
+                "ms_per_tick": 1.7195585833333333
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 45.0,
+                "ms_per_tick": 0.21813925000000017
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 1.2938827499999999
+              },
+              "device_copy": {
+                "count_per_tick": 12.0,
+                "ms_per_tick": 0.039164833333333336
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 1.9556903333333324
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.5494645
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 108.0,
+                  "inclusive_ms_per_tick": 0.04155891666666666
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 711.0,
+                  "inclusive_ms_per_tick": 0.25040283333333474
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 115.0,
+                  "inclusive_ms_per_tick": 0.10204925000000022
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 113.0,
+                  "inclusive_ms_per_tick": 0.8571441666666662
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 0.3431263333333335
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 143.0,
+                  "inclusive_ms_per_tick": 0.07380833333333303
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.14816558333333335
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 11.0,
+                  "inclusive_ms_per_tick": 0.3743036666666667
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0006416666666666667
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.436672
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.009359166666666667
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.0031450833333333335
+                }
+              }
+            }
+          }
+        },
+        "bf16-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            6.271792663028464,
+            6.275383680622326,
+            6.1967329311301,
+            6.2811003932438325,
+            6.250637062476017
+          ],
+          "median_ms_per_tick": 6.271792663028464,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.49064600467681885,
+            "loss_candidate": 0.49058079719543457,
+            "loss_relative_difference": 0.0001329012786463604,
+            "features_relative_l2": 0.00489043490961194,
+            "gradient_relative_l2": 0.026658499613404274,
+            "gradient_cosine": 0.9996446371078491,
+            "update_relative_l2": 0.09994028508663177,
+            "candidate_update_rms": 8.120512211462483e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/r9700-cpu16/bf16-compiled/bf16-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 197.0,
+            "kernel_sum_ms_per_tick": 2.9488553333333334,
+            "kernel_union_ms_per_tick": 2.948855275472005,
+            "first_to_last_kernel_ms_per_tick": 11.248566416422525,
+            "kernel_free_gap_ms_per_tick": 8.29971114095052,
+            "median_kernel_free_gap_us": 32.301025390625,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 124.0,
+                "ms_per_tick": 2.1012934166666626
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 45.0,
+                "ms_per_tick": 0.21687941666666655
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 0.6007
+              },
+              "device_copy": {
+                "count_per_tick": 11.0,
+                "ms_per_tick": 0.029982500000000016
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 1.2688202499999996
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.51855375
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 119.0,
+                  "inclusive_ms_per_tick": 0.046285000000000055
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 741.0,
+                  "inclusive_ms_per_tick": 0.2713396666666727
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 138.0,
+                  "inclusive_ms_per_tick": 0.12405516666666679
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 124.0,
+                  "inclusive_ms_per_tick": 1.5427299166666684
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 0.31394841666666673
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 99.0,
+                  "inclusive_ms_per_tick": 0.055454500000000316
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.1503001666666667
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 10.0,
+                  "inclusive_ms_per_tick": 0.06666174999999999
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0009016666666666667
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.4074256666666667
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.009011083333333334
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.0049159166666666665
+                }
+              }
+            }
+          }
+        },
+        "fp16-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            6.405308237299323,
+            6.435614694055403,
+            6.402943575085374,
+            6.405837149941362,
+            6.40311882525566
+          ],
+          "median_ms_per_tick": 6.405308237299323,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.49064600467681885,
+            "loss_candidate": 0.49064216017723083,
+            "loss_relative_difference": 7.83558726936951e-06,
+            "features_relative_l2": 0.0006156117306090891,
+            "gradient_relative_l2": 0.000970409600995481,
+            "gradient_cosine": 0.9999995231628418,
+            "update_relative_l2": 0.022818615660071373,
+            "candidate_update_rms": 8.120886195683852e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/r9700-cpu16/fp16-compiled/fp16-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 206.0,
+            "kernel_sum_ms_per_tick": 3.0109565833333334,
+            "kernel_union_ms_per_tick": 3.0109564310709636,
+            "first_to_last_kernel_ms_per_tick": 12.772091674804688,
+            "kernel_free_gap_ms_per_tick": 9.761135243733724,
+            "median_kernel_free_gap_us": 34.31103515625,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 133.0,
+                "ms_per_tick": 2.2466983333333324
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 45.0,
+                "ms_per_tick": 0.21320641666666673
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 0.5116124166666666
+              },
+              "device_copy": {
+                "count_per_tick": 11.0,
+                "ms_per_tick": 0.03943941666666669
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 1.3161036666666672
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.5515293333333333
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 128.0,
+                  "inclusive_ms_per_tick": 0.055172416666666675
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 786.0,
+                  "inclusive_ms_per_tick": 0.30929249999999886
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 147.0,
+                  "inclusive_ms_per_tick": 0.13741291666666672
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 133.0,
+                  "inclusive_ms_per_tick": 2.1307438333333306
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 0.5642579999999998
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 95.0,
+                  "inclusive_ms_per_tick": 0.057031416666666404
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.1569189166666666
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 10.0,
+                  "inclusive_ms_per_tick": 0.07465083333333335
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0007966666666666667
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.22350741666666665
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.009987666666666667
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.0031034166666666666
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "r9700-cpu16-repeat": {
+      "device": "AMD Radeon AI PRO R9700",
+      "arch": "gfx1201",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "visible_devices": "2",
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            6.552797574840952,
+            6.546563505980885,
+            6.552555743837729,
+            6.882253781805048,
+            6.568198394234059
+          ],
+          "median_ms_per_tick": 6.552797574840952,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.49064600467681885,
+            "loss_candidate": 0.4906460642814636,
+            "loss_relative_difference": 1.2148197316851954e-07,
+            "features_relative_l2": 1.4222244715256238e-07,
+            "gradient_relative_l2": 3.0304605047604127e-07,
+            "gradient_cosine": 1.0000001192092896,
+            "update_relative_l2": 6.881419722049031e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          }
+        }
+      }
+    },
+    "r9700-cpu16-tensile": {
+      "device": "AMD Radeon AI PRO R9700",
+      "arch": "gfx1201",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "visible_devices": "2",
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            6.533666919131065,
+            6.546725318185054,
+            6.700249093410093,
+            6.541418287088163,
+            6.551505781681044
+          ],
+          "median_ms_per_tick": 6.546725318185054,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.49064600467681885,
+            "loss_candidate": 0.4906460642814636,
+            "loss_relative_difference": 1.2148197316851954e-07,
+            "features_relative_l2": 1.4222244715256238e-07,
+            "gradient_relative_l2": 3.0304605047604127e-07,
+            "gradient_cosine": 1.0000001192092896,
+            "update_relative_l2": 6.881419722049031e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/r9700-cpu16-tensile/fp32-compiled/fp32-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 187.0,
+            "kernel_sum_ms_per_tick": 2.8925556666666665,
+            "kernel_union_ms_per_tick": 2.892555450439453,
+            "first_to_last_kernel_ms_per_tick": 10.775220998128255,
+            "kernel_free_gap_ms_per_tick": 7.882665547688802,
+            "median_kernel_free_gap_us": 32.072021484375,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 113.0,
+                "ms_per_tick": 1.6872544166666668
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 45.0,
+                "ms_per_tick": 0.21240266666666666
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 0.9585036666666666
+              },
+              "device_copy": {
+                "count_per_tick": 12.0,
+                "ms_per_tick": 0.03439491666666668
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 1.7285657499999993
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.5235485000000001
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 108.0,
+                  "inclusive_ms_per_tick": 0.04390433333333338
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 711.0,
+                  "inclusive_ms_per_tick": 0.25477450000000246
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 115.0,
+                  "inclusive_ms_per_tick": 0.10438191666666678
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 113.0,
+                  "inclusive_ms_per_tick": 0.9650610833333335
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 0.32753658333333335
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 143.0,
+                  "inclusive_ms_per_tick": 0.0750041666666675
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.15438716666666663
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 11.0,
+                  "inclusive_ms_per_tick": 0.0775995833333333
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0008483333333333333
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.41286358333333334
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.009366749999999998
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.0030750833333333337
+                }
+              }
+            }
+          }
+        }
+      },
+      "extra_environment": {
+        "ROCBLAS_USE_HIPBLASLT": "0"
+      }
+    },
+    "r9700-cpu32": {
+      "device": "AMD Radeon AI PRO R9700",
+      "arch": "gfx1201",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "visible_devices": "2",
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            6.272311749489745,
+            6.665617156249937,
+            6.697261331282789,
+            6.898418337368639,
+            6.806877355847973
+          ],
+          "median_ms_per_tick": 6.697261331282789,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.49064600467681885,
+            "loss_candidate": 0.4906460642814636,
+            "loss_relative_difference": 1.2148197316851954e-07,
+            "features_relative_l2": 1.4222244715256238e-07,
+            "gradient_relative_l2": 3.0304605047604127e-07,
+            "gradient_cosine": 1.0000001192092896,
+            "update_relative_l2": 6.881419722049031e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          }
+        }
+      }
+    },
+    "r9700-main16": {
+      "device": "AMD Radeon AI PRO R9700",
+      "arch": "gfx1201",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "visible_devices": "2",
+      "main_cpu_affinity_during_timing": [
+        16
+      ],
+      "main_thread_pinned_after_first_transition": true,
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            6.541002800076967,
+            6.53640406235354,
+            6.512616781401448,
+            6.030067824758589,
+            5.884971587511245
+          ],
+          "median_ms_per_tick": 6.512616781401448,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.49064600467681885,
+            "loss_candidate": 0.4906460642814636,
+            "loss_relative_difference": 1.2148197316851954e-07,
+            "features_relative_l2": 1.4222244715256238e-07,
+            "gradient_relative_l2": 3.0304605047604127e-07,
+            "gradient_cosine": 1.0000001192092896,
+            "update_relative_l2": 6.881419722049031e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/r9700-main16/fp32-compiled/fp32-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 187.0,
+            "kernel_sum_ms_per_tick": 3.0507311666666665,
+            "kernel_union_ms_per_tick": 3.050730946858724,
+            "first_to_last_kernel_ms_per_tick": 26.208858998616538,
+            "kernel_free_gap_ms_per_tick": 23.158128051757814,
+            "median_kernel_free_gap_us": 24.1610107421875,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 113.0,
+                "ms_per_tick": 1.8017299166666658
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 45.0,
+                "ms_per_tick": 0.23019316666666662
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 0.9889765000000005
+              },
+              "device_copy": {
+                "count_per_tick": 12.0,
+                "ms_per_tick": 0.029831583333333345
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 2.3149310833333345
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 6.401231583333333
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 108.0,
+                  "inclusive_ms_per_tick": 0.0373579999999999
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 711.0,
+                  "inclusive_ms_per_tick": 0.21598883333333174
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 115.0,
+                  "inclusive_ms_per_tick": 0.08707950000000007
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 113.0,
+                  "inclusive_ms_per_tick": 7.955401583333331
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 4.429244166666664
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 143.0,
+                  "inclusive_ms_per_tick": 0.06520216666666598
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.9244263333333331
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 11.0,
+                  "inclusive_ms_per_tick": 0.05582541666666666
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0005666666666666667
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 1.9892684999999994
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 3.1504118333333335
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.003030083333333334
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "v620-cpu16": {
+      "device": "AMD Radeon Pro V620",
+      "arch": "gfx1030",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "visible_devices": "0",
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            5.910188049892895,
+            5.909077556134434,
+            5.8967694065358955,
+            5.89025733715971,
+            5.908519124932354
+          ],
+          "median_ms_per_tick": 5.908519124932354,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.4906460642814636,
+            "loss_candidate": 0.49064600467681885,
+            "loss_relative_difference": 1.2148195841065153e-07,
+            "features_relative_l2": 1.397363718069755e-07,
+            "gradient_relative_l2": 2.767945375126146e-07,
+            "gradient_cosine": 1.0,
+            "update_relative_l2": 6.103876785346074e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/v620-cpu16/fp32-compiled/fp32-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 187.0,
+            "kernel_sum_ms_per_tick": 5.712490083333333,
+            "kernel_union_ms_per_tick": 5.71248984781901,
+            "first_to_last_kernel_ms_per_tick": 11.834873575846354,
+            "kernel_free_gap_ms_per_tick": 6.122383728027343,
+            "median_kernel_free_gap_us": 11.6820068359375,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 113.0,
+                "ms_per_tick": 2.9367111666666643
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 45.0,
+                "ms_per_tick": 0.5141281666666666
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 2.2050784999999995
+              },
+              "device_copy": {
+                "count_per_tick": 12.0,
+                "ms_per_tick": 0.05657225000000002
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.7789032500000003
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 1.2025546666666664
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 108.0,
+                  "inclusive_ms_per_tick": 0.04068816666666662
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 711.0,
+                  "inclusive_ms_per_tick": 0.25611816666667037
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 115.0,
+                  "inclusive_ms_per_tick": 0.1035775833333336
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 113.0,
+                  "inclusive_ms_per_tick": 1.4956707499999984
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 1.0232689166666666
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 24.0,
+                  "inclusive_ms_per_tick": 0.022385916666666655
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.15304458333333332
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 11.0,
+                  "inclusive_ms_per_tick": 0.07372408333333333
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0008033333333333334
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 1.0361322499999999
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.008981833333333335
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.0031434166666666668
+                }
+              }
+            }
+          }
+        },
+        "bf16-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            6.158156575111207,
+            6.157459337555338,
+            6.1624734378710855,
+            6.154060656263027,
+            6.145354362524813
+          ],
+          "median_ms_per_tick": 6.157459337555338,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.4906460642814636,
+            "loss_candidate": 0.49058079719543457,
+            "loss_relative_difference": 0.00013302274445966343,
+            "features_relative_l2": 0.0048904395662248135,
+            "gradient_relative_l2": 0.026658499613404274,
+            "gradient_cosine": 0.9996446371078491,
+            "update_relative_l2": 0.09994057565927505,
+            "candidate_update_rms": 8.120512211462483e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/v620-cpu16/bf16-compiled/bf16-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 196.83333333333334,
+            "kernel_sum_ms_per_tick": 6.6919855833333335,
+            "kernel_union_ms_per_tick": 6.691985361735026,
+            "first_to_last_kernel_ms_per_tick": 12.053580841064454,
+            "kernel_free_gap_ms_per_tick": 5.361595479329427,
+            "median_kernel_free_gap_us": 8.3609619140625,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 123.91666666666667,
+                "ms_per_tick": 2.809449916666665
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 44.916666666666664,
+                "ms_per_tick": 0.3265129999999999
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 3.52465975
+              },
+              "device_copy": {
+                "count_per_tick": 11.0,
+                "ms_per_tick": 0.031362916666666664
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.8408310833333338
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 1.1233286666666669
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 119.0,
+                  "inclusive_ms_per_tick": 0.05006783333333353
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 741.0,
+                  "inclusive_ms_per_tick": 0.2656249166666712
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 126.0,
+                  "inclusive_ms_per_tick": 0.11338600000000021
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 124.0,
+                  "inclusive_ms_per_tick": 1.898668916666668
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 0.6092449166666667
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 24.0,
+                  "inclusive_ms_per_tick": 0.02218866666666665
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.13987549999999996
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 10.0,
+                  "inclusive_ms_per_tick": 0.1570601666666667
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0007466666666666667
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 1.00277675
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.009843499999999998
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.0030742499999999997
+                }
+              }
+            }
+          }
+        },
+        "fp16-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            5.377072931150906,
+            6.030328418273712,
+            6.036557093466399,
+            5.980089749937179,
+            6.092913830798352
+          ],
+          "median_ms_per_tick": 6.030328418273712,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.4906460642814636,
+            "loss_candidate": 0.4906429648399353,
+            "loss_relative_difference": 6.31706183735388e-06,
+            "features_relative_l2": 0.000614251708611846,
+            "gradient_relative_l2": 0.0009704911499284208,
+            "gradient_cosine": 0.9999995827674866,
+            "update_relative_l2": 0.02280864119529724,
+            "candidate_update_rms": 8.120886195683852e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/v620-cpu16/fp16-compiled/fp16-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 206.0,
+            "kernel_sum_ms_per_tick": 6.176422916666667,
+            "kernel_union_ms_per_tick": 6.176422597249349,
+            "first_to_last_kernel_ms_per_tick": 14.853164998372396,
+            "kernel_free_gap_ms_per_tick": 8.676742401123047,
+            "median_kernel_free_gap_us": 11.60107421875,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 133.0,
+                "ms_per_tick": 3.9640580833333265
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 45.0,
+                "ms_per_tick": 0.5810575833333333
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 1.5732977500000007
+              },
+              "device_copy": {
+                "count_per_tick": 11.0,
+                "ms_per_tick": 0.05800950000000001
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 1.0032369999999997
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 1.1055585
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 128.0,
+                  "inclusive_ms_per_tick": 0.056969666666666814
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 786.0,
+                  "inclusive_ms_per_tick": 0.3053335000000051
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 135.0,
+                  "inclusive_ms_per_tick": 0.12878266666666605
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 133.0,
+                  "inclusive_ms_per_tick": 4.348799666666668
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 0.30855416666666685
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 24.0,
+                  "inclusive_ms_per_tick": 0.02300274999999998
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.3947758333333335
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 10.0,
+                  "inclusive_ms_per_tick": 0.06443274999999998
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0008299999999999999
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.9867050833333333
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.010276750000000001
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.0030833333333333333
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "v620-cpu16-repeat": {
+      "device": "AMD Radeon Pro V620",
+      "arch": "gfx1030",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "visible_devices": "0",
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            5.6261797188199125,
+            5.881519162358018,
+            5.8438963067601435,
+            5.834072181460215,
+            6.255963725561742
+          ],
+          "median_ms_per_tick": 5.8438963067601435,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.4906460642814636,
+            "loss_candidate": 0.49064600467681885,
+            "loss_relative_difference": 1.2148195841065153e-07,
+            "features_relative_l2": 1.397363718069755e-07,
+            "gradient_relative_l2": 2.767945375126146e-07,
+            "gradient_cosine": 1.0,
+            "update_relative_l2": 6.103876785346074e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          }
+        }
+      }
+    },
+    "v620-cpu32": {
+      "device": "AMD Radeon Pro V620",
+      "arch": "gfx1030",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "visible_devices": "0",
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            5.700575325317914,
+            6.314634962473065,
+            5.9030759999586735,
+            5.778710087906802,
+            6.123027806461323
+          ],
+          "median_ms_per_tick": 5.9030759999586735,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.4906460642814636,
+            "loss_candidate": 0.49064600467681885,
+            "loss_relative_difference": 1.2148195841065153e-07,
+            "features_relative_l2": 1.397363718069755e-07,
+            "gradient_relative_l2": 2.767945375126146e-07,
+            "gradient_cosine": 1.0,
+            "update_relative_l2": 6.103876785346074e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          }
+        }
+      }
+    },
+    "v620-main16": {
+      "device": "AMD Radeon Pro V620",
+      "arch": "gfx1030",
+      "torch": "2.12.0+rocm7.14.0",
+      "hip": "7.14.60850",
+      "cpu_affinity": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "visible_devices": "0",
+      "main_cpu_affinity_during_timing": [
+        16
+      ],
+      "main_thread_pinned_after_first_transition": true,
+      "variants": {
+        "fp32-compiled": {
+          "status": "ok",
+          "ms_per_tick": [
+            5.883760768483626,
+            5.853041444061091,
+            5.890348213142715,
+            5.86459526894032,
+            6.069721449603094
+          ],
+          "median_ms_per_tick": 5.883760768483626,
+          "finite": true,
+          "numerical": {
+            "loss_reference": 0.4906460642814636,
+            "loss_candidate": 0.49064600467681885,
+            "loss_relative_difference": 1.2148195841065153e-07,
+            "features_relative_l2": 1.397363718069755e-07,
+            "gradient_relative_l2": 2.767945375126146e-07,
+            "gradient_cosine": 1.0,
+            "update_relative_l2": 6.103876785346074e-06,
+            "candidate_update_rms": 8.120888378471136e-05,
+            "candidate_finite": true,
+            "master_dtype": "torch.float32",
+            "body_dtype": "torch.float32",
+            "pass": true
+          },
+          "profile": {
+            "file": "runs/gpu-gap-20261011/v620-main16/fp32-compiled/fp32-compiled-trace.json",
+            "ticks": 12,
+            "kernel_count_per_tick": 187.0,
+            "kernel_sum_ms_per_tick": 6.837534333333333,
+            "kernel_union_ms_per_tick": 6.837534098307292,
+            "first_to_last_kernel_ms_per_tick": 34.76663525390625,
+            "kernel_free_gap_ms_per_tick": 27.929101155598957,
+            "median_kernel_free_gap_us": 7.881103515625,
+            "kernel_groups": {
+              "triton": {
+                "count_per_tick": 113.0,
+                "ms_per_tick": 3.3860053333333267
+              },
+              "torch_rocprim_other": {
+                "count_per_tick": 45.0,
+                "ms_per_tick": 0.6294387499999996
+              },
+              "blas_named": {
+                "count_per_tick": 17.0,
+                "ms_per_tick": 2.74953775
+              },
+              "device_copy": {
+                "count_per_tick": 12.0,
+                "ms_per_tick": 0.07255249999999996
+              }
+            },
+            "host_ops": {
+              "cpu_op": {
+                "aten::bmm": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.6604393333333333
+                },
+                "aten::nonzero": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 9.535376750000001
+                }
+              },
+              "cuda_runtime": {
+                "hipCtxGetCurrent": {
+                  "count_per_tick": 108.0,
+                  "inclusive_ms_per_tick": 0.04147766666666656
+                },
+                "hipPointerGetAttribute": {
+                  "count_per_tick": 711.0,
+                  "inclusive_ms_per_tick": 0.22813391666666727
+                },
+                "hipDeviceGetAttribute": {
+                  "count_per_tick": 115.0,
+                  "inclusive_ms_per_tick": 0.09419816666666667
+                },
+                "hipModuleLaunchKernel": {
+                  "count_per_tick": 113.0,
+                  "inclusive_ms_per_tick": 12.355252999999985
+                },
+                "hipLaunchKernel": {
+                  "count_per_tick": 44.0,
+                  "inclusive_ms_per_tick": 7.238492166666668
+                },
+                "hipGetDevicePropertiesR0600": {
+                  "count_per_tick": 24.0,
+                  "inclusive_ms_per_tick": 0.021285416666666664
+                },
+                "hipExtModuleLaunchKernel": {
+                  "count_per_tick": 17.0,
+                  "inclusive_ms_per_tick": 0.09624891666666666
+                },
+                "hipMemcpyAsync": {
+                  "count_per_tick": 11.0,
+                  "inclusive_ms_per_tick": 0.3607639166666667
+                },
+                "hipDevicePrimaryCtxGetState": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 0.0006450000000000001
+                },
+                "hipMemcpyWithStream": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 2.54222675
+                },
+                "hipMemsetAsync": {
+                  "count_per_tick": 1.0,
+                  "inclusive_ms_per_tick": 3.5795849166666667
+                },
+                "hipDeviceSynchronize": {
+                  "count_per_tick": 0.16666666666666666,
+                  "inclusive_ms_per_tick": 0.0023158333333333334
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "validation": {
+    "completed_cases": 13,
+    "all_status_ok": true,
+    "all_numerical_checks_pass": true
+  },
+  "conclusions": {
+    "supported": [
+      "R9700 has shorter GPU kernel execution time than V620 for the measured FP32 compiled workload.",
+      "Faster GPU kernel execution does not translate proportionally into lower unprofiled wall time for this workload.",
+      "Many small kernels, per-agent matrix-vector products, and a per-tick synchronization in birth detection leave host/launch/dependency latency on the critical path.",
+      "The previous cross-GPU wall-time ranking included different CPU affinity masks and concurrent benchmark processes; it is not a clean comparison of raw GPU arithmetic."
+    ],
+    "not_established": [
+      "The exact contribution of CPU affinity versus background activity, clock policy, scheduling, and runtime/library internals.",
+      "A specific hipBLASLt, rocBLAS, or driver bug causing the timing gap.",
+      "Universal GPU ranking, sustained GPU utilization, or a hardware-speedup ratio from separately profiled kernel times."
+    ]
+  }
+}

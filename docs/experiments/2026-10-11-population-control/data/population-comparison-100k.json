@@ -1,0 +1,169 @@
+{
+  "common_tick": 100000,
+  "time_basis": "same_simulation_tick",
+  "tail_start": 90001,
+  "learned_status": "complete",
+  "control_status": "complete",
+  "worlds": [
+    {
+      "world": 0,
+      "seed": 42,
+      "L3": {
+        "population": 17,
+        "tail_mean": 17.9814,
+        "tail_min": 13,
+        "tail_max": 22,
+        "extinction_tick": null
+      },
+      "RANDOM": {
+        "population": 18,
+        "tail_mean": 19.8774,
+        "tail_min": 7,
+        "tail_max": 29,
+        "extinction_tick": null
+      }
+    },
+    {
+      "world": 1,
+      "seed": 1051,
+      "L3": {
+        "population": 17,
+        "tail_mean": 18.8241,
+        "tail_min": 15,
+        "tail_max": 27,
+        "extinction_tick": null
+      },
+      "RANDOM": {
+        "population": 16,
+        "tail_mean": 18.7601,
+        "tail_min": 10,
+        "tail_max": 26,
+        "extinction_tick": null
+      }
+    },
+    {
+      "world": 2,
+      "seed": 2060,
+      "L3": {
+        "population": 18,
+        "tail_mean": 17.4086,
+        "tail_min": 12,
+        "tail_max": 23,
+        "extinction_tick": null
+      },
+      "RANDOM": {
+        "population": 18,
+        "tail_mean": 17.6928,
+        "tail_min": 9,
+        "tail_max": 28,
+        "extinction_tick": null
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "tick": 0,
+      "L3": [
+        32,
+        32,
+        32
+      ],
+      "RANDOM": [
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "tick": 1800,
+      "L3": [
+        36,
+        32,
+        28
+      ],
+      "RANDOM": [
+        33,
+        32,
+        26
+      ]
+    },
+    {
+      "tick": 10000,
+      "L3": [
+        9,
+        13,
+        19
+      ],
+      "RANDOM": [
+        19,
+        15,
+        16
+      ]
+    },
+    {
+      "tick": 20000,
+      "L3": [
+        14,
+        21,
+        11
+      ],
+      "RANDOM": [
+        24,
+        22,
+        18
+      ]
+    },
+    {
+      "tick": 40000,
+      "L3": [
+        19,
+        20,
+        14
+      ],
+      "RANDOM": [
+        22,
+        17,
+        11
+      ]
+    },
+    {
+      "tick": 60000,
+      "L3": [
+        11,
+        16,
+        19
+      ],
+      "RANDOM": [
+        12,
+        12,
+        24
+      ]
+    },
+    {
+      "tick": 80000,
+      "L3": [
+        16,
+        14,
+        17
+      ],
+      "RANDOM": [
+        10,
+        21,
+        23
+      ]
+    },
+    {
+      "tick": 100000,
+      "L3": [
+        17,
+        17,
+        18
+      ],
+      "RANDOM": [
+        18,
+        16,
+        18
+      ]
+    }
+  ]
+}

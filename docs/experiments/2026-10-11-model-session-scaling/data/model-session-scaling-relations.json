@@ -1,0 +1,905 @@
+{
+  "study": "scale40-20261011",
+  "input_hashes": {
+    "scale40-20261011-protocol.json": "a44d345a13d48a2115653ea18b74b295dc33d60c78852b9a34031ccf27a0da04",
+    "scale40-20261011-h064.json": "970b3d9df9d5b5b86803e23d48d8a3d2ea23a494da33b583f44d72fb2848254e",
+    "scale40-20261011-h128.json": "adc53c3ecb0582f3c518f9c1aeeb971ece32cc8df35705ac5009a80bc8bf8695",
+    "scale40-20261011-h192.json": "fd464a69c6936b4c80b9305965765825a7c7ca5cd7bcb83791a81e166f096472"
+  },
+  "validation": {
+    "training_world_sessions": 360,
+    "evaluation_world_sessions": 36,
+    "source_hashes": [
+      "5e19323b766c0ac6ce88c8bfc429ad0fabae9d86822f846d3ebf24916521ab6c"
+    ],
+    "censoring": {
+      "training": [
+        {
+          "hidden": 128,
+          "session": 12,
+          "chain": 2,
+          "alive": 1,
+          "late_food_windows": [
+            3,
+            4,
+            0
+          ]
+        }
+      ],
+      "evaluation": []
+    },
+    "all_summaries_consistent": true,
+    "all_prediction_diagnostics_complete": true
+  },
+  "methods": {
+    "outcome": "last individual alive in each world; min(extinction tick, 10000)",
+    "session_relation": "Spearman per chain, then descriptive average; also pooled coefficients for transparency",
+    "size_relation": "paired differences on identical session/map/chain index; pooled Spearman descriptive only",
+    "p_values": "not reported: only 3 chains per size, repeated sessions and evaluation maps",
+    "limitations": [
+      "session count includes selection, mutation and inheritance, not learning alone",
+      "encoder stays width 32; hidden changes only part of the architecture",
+      "hidden192 used R9700; hidden64/128 used separate V620s",
+      "no held-out evaluation at session zero; changes compare session5 to session40",
+      "evaluation allows L3 learning but is never fed back into training"
+    ]
+  },
+  "models": {
+    "64": {
+      "parameters_per_agent": 65625,
+      "training_mean_capped": 3414.6,
+      "training_median_capped": 3301.0,
+      "training_chain_means": [
+        3500.45,
+        3156.225,
+        3587.125
+      ],
+      "training_quantiles_10_25_50_75_90": [
+        2720.0,
+        2963.0,
+        3301.0,
+        3527.5,
+        4140.3
+      ],
+      "training_sessions_at_least_5000": 5,
+      "training_bins": {
+        "1-5": 4676.066666666667,
+        "6-10": 3367.266666666667,
+        "11-20": 3240.866666666667,
+        "21-40": 3197.9333333333334
+      },
+      "training_trend_all": {
+        "sessions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": -0.25995590816158415,
+            "pearson_r": -0.41622570054412095
+          },
+          {
+            "spearman_rho": -0.34840525328330213,
+            "pearson_r": -0.4299649446949021
+          },
+          {
+            "spearman_rho": 0.01698892704175909,
+            "pearson_r": -0.254183513638578
+          }
+        ],
+        "mean_chain_spearman_rho": -0.1971240781343757,
+        "pooled_descriptive": {
+          "spearman_rho": -0.19984264814789485,
+          "pearson_r": -0.32956606175920805
+        },
+        "chain_linear_slopes_per_doubling": [
+          -497.4166671638226,
+          -254.29612162622175,
+          -379.472703072527
+        ]
+      },
+      "training_trend_after5": {
+        "sessions": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": 0.002100987469260392,
+            "pearson_r": -0.20511239046064944
+          },
+          {
+            "spearman_rho": -0.054621848739495805,
+            "pearson_r": -0.05357862858605614
+          },
+          {
+            "spearman_rho": 0.3096539435676183,
+            "pearson_r": 0.21305736395745145
+          }
+        ],
+        "mean_chain_spearman_rho": 0.08571102743246095,
+        "pooled_descriptive": {
+          "spearman_rho": 0.09369968735707332,
+          "pearson_r": -0.05646048350239759
+        },
+        "chain_linear_slopes_per_doubling": [
+          -281.1065003530542,
+          -71.60787055190767,
+          137.083323189315
+        ]
+      },
+      "evaluation_trend": {
+        "sessions": [
+          5,
+          10,
+          20,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": 0.39999999999999997,
+            "pearson_r": 0.6042901372753616
+          },
+          {
+            "spearman_rho": -0.7999999999999999,
+            "pearson_r": -0.7128283116185521
+          },
+          {
+            "spearman_rho": 0.39999999999999997,
+            "pearson_r": 0.4023350565658612
+          }
+        ],
+        "mean_chain_spearman_rho": 0.0,
+        "pooled_descriptive": {
+          "spearman_rho": 0.0,
+          "pearson_r": 0.03711142398167973
+        },
+        "chain_linear_slopes_per_doubling": [
+          100.4999999999998,
+          -224.20000000000033,
+          141.49999999999983
+        ]
+      },
+      "evaluation_values": [
+        [
+          3000,
+          3344,
+          2925
+        ],
+        [
+          3207,
+          2712,
+          3372
+        ],
+        [
+          2814,
+          2726,
+          3608
+        ],
+        [
+          3466,
+          2592,
+          3318
+        ]
+      ],
+      "evaluation_means": [
+        3089.6666666666665,
+        3097.0,
+        3049.3333333333335,
+        3125.3333333333335
+      ],
+      "evaluation_food_means": [
+        73.0,
+        72.0,
+        68.33333333333333,
+        70.0
+      ],
+      "evaluation_prediction_losses": [
+        0.0099820395377903,
+        0.00981494523255675,
+        0.008644542642197925,
+        0.007947890005779392
+      ],
+      "prediction_loss_change_percent_5_to_40": -20.378095321201293,
+      "evaluation_delta_5_to_40_by_chain": [
+        466,
+        -752,
+        393
+      ],
+      "evaluation_delta_5_to_40_mean": 35.666666666666664,
+      "evaluation_delta_5_to_40_percent_of_mean": 1.1543855863631602,
+      "stability": [
+        {
+          "world": 0,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        },
+        {
+          "world": 1,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        },
+        {
+          "world": 2,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        }
+      ]
+    },
+    "128": {
+      "parameters_per_agent": 146009,
+      "training_mean_capped": 3937.991666666667,
+      "training_median_capped": 3501.5,
+      "training_chain_means": [
+        4183.525,
+        3052.775,
+        4577.675
+      ],
+      "training_quantiles_10_25_50_75_90": [
+        2809.0,
+        3241.75,
+        3501.5,
+        4752.25,
+        5374.0
+      ],
+      "training_sessions_at_least_5000": 24,
+      "training_bins": {
+        "1-5": 4378.933333333333,
+        "6-10": 3623.866666666667,
+        "11-20": 3816.9,
+        "21-40": 3966.8333333333335
+      },
+      "training_trend_all": {
+        "sessions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": -0.2450705305695892,
+            "pearson_r": -0.3337799830192601
+          },
+          {
+            "spearman_rho": 0.11684976861594873,
+            "pearson_r": 0.11442746556939004
+          },
+          {
+            "spearman_rho": 0.2545147523790609,
+            "pearson_r": 0.10996699772051913
+          }
+        ],
+        "mean_chain_spearman_rho": 0.04209799680847348,
+        "pooled_descriptive": {
+          "spearman_rho": -0.018636198814634224,
+          "pearson_r": -0.055576404720505304
+        },
+        "chain_linear_slopes_per_doubling": [
+          -348.9149014575322,
+          -24.842063760788736,
+          110.68182144113358
+        ]
+      },
+      "training_trend_after5": {
+        "sessions": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": 0.05834507842247178,
+            "pearson_r": -0.029175594832409106
+          },
+          {
+            "spearman_rho": 0.37485680983348946,
+            "pearson_r": 0.3522908898852428
+          },
+          {
+            "spearman_rho": 0.23865546218487396,
+            "pearson_r": 0.049627912088148915
+          }
+        ],
+        "mean_chain_spearman_rho": 0.22395245014694506,
+        "pooled_descriptive": {
+          "spearman_rho": 0.11500576524093085,
+          "pearson_r": 0.04316907633815026
+        },
+        "chain_linear_slopes_per_doubling": [
+          32.37440899007521,
+          122.53219894068104,
+          140.18448904848555
+        ]
+      },
+      "evaluation_trend": {
+        "sessions": [
+          5,
+          10,
+          20,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": 0.0,
+            "pearson_r": 0.03415674248130726
+          },
+          {
+            "spearman_rho": 0.7999999999999999,
+            "pearson_r": 0.76581208206287
+          },
+          {
+            "spearman_rho": 0.19999999999999998,
+            "pearson_r": 0.33445873164126033
+          }
+        ],
+        "mean_chain_spearman_rho": 0.3333333333333333,
+        "pooled_descriptive": {
+          "spearman_rho": 0.34546681367002435,
+          "pearson_r": 0.20020591043389568
+        },
+        "chain_linear_slopes_per_doubling": [
+          68.99999999999957,
+          196.89999999999972,
+          492.09999999999997
+        ]
+      },
+      "evaluation_values": [
+        [
+          3632,
+          2539,
+          2865
+        ],
+        [
+          2822,
+          3045,
+          5705
+        ],
+        [
+          4508,
+          2728,
+          4836
+        ],
+        [
+          3300,
+          3301,
+          4795
+        ]
+      ],
+      "evaluation_means": [
+        3012.0,
+        3857.3333333333335,
+        4024.0,
+        3798.6666666666665
+      ],
+      "evaluation_food_means": [
+        71.66666666666667,
+        69.33333333333333,
+        71.33333333333333,
+        63.0
+      ],
+      "evaluation_prediction_losses": [
+        0.008947662038463707,
+        0.007274918234975977,
+        0.005713916650187165,
+        0.0043292393903393974
+      ],
+      "prediction_loss_change_percent_5_to_40": -51.61597105781257,
+      "evaluation_delta_5_to_40_by_chain": [
+        -332,
+        762,
+        1930
+      ],
+      "evaluation_delta_5_to_40_mean": 786.6666666666666,
+      "evaluation_delta_5_to_40_percent_of_mean": 26.117751217352804,
+      "stability": [
+        {
+          "world": 0,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        },
+        {
+          "world": 1,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        },
+        {
+          "world": 2,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        }
+      ]
+    },
+    "192": {
+      "parameters_per_agent": 259161,
+      "training_mean_capped": 3522.325,
+      "training_median_capped": 3336.0,
+      "training_chain_means": [
+        3171.775,
+        3939.25,
+        3455.95
+      ],
+      "training_quantiles_10_25_50_75_90": [
+        2714.9,
+        3000.0,
+        3336.0,
+        3868.5,
+        4301.800000000002
+      ],
+      "training_sessions_at_least_5000": 6,
+      "training_bins": {
+        "1-5": 3908.4,
+        "6-10": 3169.733333333333,
+        "11-20": 3491.9,
+        "21-40": 3529.1666666666665
+      },
+      "training_trend_all": {
+        "sessions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": -0.0036730368343825684,
+            "pearson_r": -0.030733752335186673
+          },
+          {
+            "spearman_rho": 0.11894934333958726,
+            "pearson_r": 0.15442656453852324
+          },
+          {
+            "spearman_rho": -0.13846803336214303,
+            "pearson_r": -0.18958567370946824
+          }
+        ],
+        "mean_chain_spearman_rho": -0.007730575618979445,
+        "pooled_descriptive": {
+          "spearman_rho": -0.011641924851394344,
+          "pearson_r": -0.003655144913716317
+        },
+        "chain_linear_slopes_per_doubling": [
+          -84.91835985794032,
+          58.354897416351534,
+          -237.00092387687937
+        ]
+      },
+      "training_trend_after5": {
+        "sessions": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": 0.24443933141504368,
+            "pearson_r": 0.28982628048580644
+          },
+          {
+            "spearman_rho": 0.08263305322128851,
+            "pearson_r": 0.17969620696925923
+          },
+          {
+            "spearman_rho": 0.06611107236606034,
+            "pearson_r": 0.11974855315549537
+          }
+        ],
+        "mean_chain_spearman_rho": 0.13106115233413085,
+        "pooled_descriptive": {
+          "spearman_rho": 0.11625663302585999,
+          "pearson_r": 0.15450649118683926
+        },
+        "chain_linear_slopes_per_doubling": [
+          126.25366564006588,
+          273.4606350161656,
+          85.80999580004465
+        ]
+      },
+      "evaluation_trend": {
+        "sessions": [
+          5,
+          10,
+          20,
+          40
+        ],
+        "chain_correlations": [
+          {
+            "spearman_rho": 0.19999999999999998,
+            "pearson_r": 0.5945787604683939
+          },
+          {
+            "spearman_rho": 0.39999999999999997,
+            "pearson_r": 0.18570219744785538
+          },
+          {
+            "spearman_rho": 0.7999999999999999,
+            "pearson_r": 0.6142633239838016
+          }
+        ],
+        "mean_chain_spearman_rho": 0.4666666666666666,
+        "pooled_descriptive": {
+          "spearman_rho": 0.15114173098063566,
+          "pearson_r": 0.21003260571895593
+        },
+        "chain_linear_slopes_per_doubling": [
+          111.69999999999993,
+          39.09999999999961,
+          207.19999999999973
+        ]
+      },
+      "evaluation_values": [
+        [
+          2709,
+          3905,
+          3130
+        ],
+        [
+          2229,
+          3985,
+          3892
+        ],
+        [
+          2212,
+          4181,
+          3666
+        ],
+        [
+          3087,
+          3970,
+          3896
+        ]
+      ],
+      "evaluation_means": [
+        3248.0,
+        3368.6666666666665,
+        3353.0,
+        3651.0
+      ],
+      "evaluation_food_means": [
+        72.0,
+        70.66666666666667,
+        71.33333333333333,
+        73.33333333333333
+      ],
+      "evaluation_prediction_losses": [
+        0.010490028292720744,
+        0.007997350425518295,
+        0.006818251155159119,
+        0.005296182287851655
+      ],
+      "prediction_loss_change_percent_5_to_40": -49.51222112978676,
+      "evaluation_delta_5_to_40_by_chain": [
+        378,
+        65,
+        766
+      ],
+      "evaluation_delta_5_to_40_mean": 403.0,
+      "evaluation_delta_5_to_40_percent_of_mean": 12.407635467980294,
+      "stability": [
+        {
+          "world": 0,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        },
+        {
+          "world": 1,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        },
+        {
+          "world": 2,
+          "best_consecutive_stable_sessions": 0,
+          "criterion_met": false
+        }
+      ]
+    }
+  },
+  "paired_size_differences": {
+    "128-64": {
+      "training_mean": 523.3916666666667,
+      "training_mean_by_chain": [
+        683.075,
+        -103.45,
+        990.55
+      ],
+      "training_wins_losses_ties": [
+        82,
+        38,
+        0
+      ],
+      "evaluation_mean": 582.6666666666666,
+      "evaluation_mean_by_chain": [
+        443.75,
+        59.75,
+        1244.5
+      ],
+      "evaluation_means_by_milestone": [
+        -77.66666666666667,
+        760.3333333333334,
+        974.6666666666666,
+        673.3333333333334
+      ],
+      "evaluation_difference_at40": [
+        -166,
+        709,
+        1477
+      ]
+    },
+    "192-64": {
+      "training_mean": 107.725,
+      "training_mean_by_chain": [
+        -328.675,
+        783.025,
+        -131.175
+      ],
+      "training_wins_losses_ties": [
+        68,
+        52,
+        0
+      ],
+      "evaluation_mean": 314.8333333333333,
+      "evaluation_mean_by_chain": [
+        -562.5,
+        1166.75,
+        340.25
+      ],
+      "evaluation_means_by_milestone": [
+        158.33333333333334,
+        271.6666666666667,
+        303.6666666666667,
+        525.6666666666666
+      ],
+      "evaluation_difference_at40": [
+        -379,
+        1378,
+        578
+      ]
+    },
+    "192-128": {
+      "training_mean": -415.6666666666667,
+      "training_mean_by_chain": [
+        -1011.75,
+        886.475,
+        -1121.725
+      ],
+      "training_wins_losses_ties": [
+        47,
+        73,
+        0
+      ],
+      "evaluation_mean": -267.8333333333333,
+      "evaluation_mean_by_chain": [
+        -1006.25,
+        1107.0,
+        -904.25
+      ],
+      "evaluation_means_by_milestone": [
+        236.0,
+        -488.6666666666667,
+        -671.0,
+        -147.66666666666666
+      ],
+      "evaluation_difference_at40": [
+        -213,
+        669,
+        -899
+      ]
+    }
+  },
+  "pooled_hidden_training_descriptive": {
+    "spearman_rho": 0.07774318972784522,
+    "pearson_r": 0.044173750536400276
+  },
+  "pooled_hidden_evaluation_descriptive": {
+    "spearman_rho": 0.20959399783782917,
+    "pearson_r": 0.1703893851410842
+  }
+}
